@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Contact</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+
+  <body>
+    <!-- Root container -->
+    <div>
+      <section>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="blogs.html">Blogs</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </section>
+
+      <section>
+        <h2>Schedule a call</h2>
+
+        <!-- Forms
+
+        -->
+
+
+        <form action="/book-appointment" method="post">
+        <!-- <form> -->
+          <label for="name_id">Name:</label>
+          <input type="text" id="name_id" name="name" value="Default Name" required />
+          <br /><br />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <br /><br />
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required />
+          <br /><br />
+          <label for="time">Time:</label>
+          <input type="time" id="time" name="time" required />
+          <br /><br />
+
+          <label for="mode">Select Mode of call:</label>
+          <select id="mode" name="mode" required>
+            <option value="">--Please choose an option--</option>
+            <option value="webex">Cisco Webex</option>
+            <option value="teams">Microsoft Teams</option>
+            <option value="meet">Google Meet</option>
+            <option value="whatsapp">Meta WhatsApp</option>
+          </select>
+
+          <br /><br />
+          <label for="reason">Reason for visit:</label>
+          <textarea id="reason" name="reason" rows="4" required></textarea>
+          <br /><br />
+          <input type="submit" value="Book Appointment">
+          <!-- <input
+          type="submit"
+          onclick="alert('You request has been submitted!')"
+          value="Book Appointment!"
+          /> -->
+          <!-- <input type="reset" value="Reset"> -->
+        </form>
+        <p>I can also be reached via: <em>go4pratham0897@gmail.com</em></p>
+      </section>
+    </div>
+  </body>
+</html>
