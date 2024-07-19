@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<!-- Write a basic structure of an html  -->
+<html lang="en">
+
+<head>
+    <!-- metadata: All the info browser knows, but not displayed-->
+    <title>Title</title>
+    <meta name="description" content="This content is ised by the search engines">
+
+    <style>
+        /* Ensure the body takes up the full viewport height */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        /* Set the parent div's height to ensure the child div's percentage height works */
+        .parent {
+            width: 100%;
+            /* Full width */
+            height: 100;
+            font-size: 10px;
+
+        }
+
+        .child {
+            width: 50%;
+            /* 50% of the parent's width */
+            height: 50%;
+            /* 50% of the parent's height */
+            background-color: lightblue;
+            /* Just for visibility */
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 
+    px(pixel)
+    unit of measurement used to define the size of elements or their properties on the web page, such as width, height, font size, and spacing
+    smallest unit of the screen that can be controlled, vary based on display
+    This measurement is absolute and does not scale with the size of the window or screen resolution, unlike relative units such as percentages or ems
+    It's consistent but not responsive or scalable.
+     -->
+
+    <!-- 
+        % (percentage)
+            relative unit of measurement that is based on the size of the parent element
+            responsive and scalable.
+       -->
+
+
+    <!-- <img src="icon.png" alt="Placeholder image" width="150%" height="150%"> -->
+
+    <div class="parent">
+
+        <img src="eiffel.jpg" alt="image1" width="50%" height="50%">
+
+        This is the parent div
+        <div class="child">
+            This div is 50% of its parent's width and height.
+            <!-- <img src="icon.png" alt="image2" width="50%" height="50%"> -->
+            <!-- <img src="icon.png" alt="image2" width="80%" height="80%"> -->
+        </div>
+    </div>
+
+    <br>
+
+</body>
+
+</html>
