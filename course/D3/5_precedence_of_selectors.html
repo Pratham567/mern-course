@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Examples</title>
+    <style>
+      /* h1 {
+        color: darkslateblue;
+      } */
+      
+      /* .header-class {
+        color: darkgreen;
+      } */
+
+      /* #header-id {
+        color: darkorange;
+      } */
+
+    </style>
+  </head>
+  <body>
+    
+    <!-- The precedence order:
+        1. id > class > element
+
+        2. inline CSS > internal CSS > external CSS (not always )
+
+
+     -->
+    
+    <h1 id="header-id" class="header-class">Internal CSS</h1>
+
+    <h2 class="header-class" style="color: chocolate;">Internal CSS</h2>
+     
+    <!-- CSS is inherited from parents-->
+
+
+    <!-- Question
+    which has the higher precedence ?
+    
+    class1.class2.class3 OR #id1.class2.class3
+    -->
+
+
+
+  </body>
+</html>
