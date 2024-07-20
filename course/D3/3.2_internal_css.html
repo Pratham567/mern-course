@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Examples</title>
+    <style>
+      h1 {
+        color: darkslateblue;
+      }
+
+      div {
+        color: blue;
+      }
+
+      .div-class {
+        color: red;
+      }
+
+      #div-id {
+        color: green;
+      }
+
+      section {
+        background-color: red;
+      }
+
+      span {
+        background-color: green;
+        font-size: 20px;
+      }
+
+      .span-class {
+        background-color: yellow;
+      }
+
+      #span-id {
+        background-color: orange;
+      }
+
+      .div-class-2 {
+        background-color: lightblue;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Internal CSS</h1>
+
+    <!-- Create a style tag inside the head -->
+
+    <!-- Apply color to divs -->
+    <div>This is a div</div>
+    <!-- Apply background color to sections -->
+
+    <section><p>This is a section</p></section>
+
+    <!-- Apply (background color) to spans -->
+    <span> This is a span</span>
+
+    <br />
+    <br />
+
+    <span class="span-class" id="span-id"> This is another span</span>
+
+    <!-- Precedence order ID >> class >> element -->
+
+    <!-- Apply internal css to a div through the following selectors: element, class, id -->
+
+    <br />
+    <br />
+
+    <div class="div-class" id="div-id-0">This is first div</div>
+
+    <br />
+    <br />
+    <div class="div-class div-class-2" id="div-id">This is a div</div>
+
+    <br />
+    <br />
+    <div class="div-class-2" id="div-id-2">This is another div</div>
+  </body>
+</html>

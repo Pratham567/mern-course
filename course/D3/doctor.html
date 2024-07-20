@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- <meta charset="UTF-8"> -->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Doctor Appointment Booking Form</title>
 </head>
 <body>
@@ -10,7 +8,7 @@
     <form action="/submit-appointment" method="post">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
-        <br><br>
+        <div>Hi, this is a div</div>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
         <br><br>
@@ -33,8 +31,8 @@
         <label for="reason">Reason for visit:</label>
         <textarea id="reason" name="reason" rows="4" required></textarea>
         <br><br>
-        <!-- <input type="submit" value="Book Appointment"> -->
-        <input type="submit" onclick="alert('You request has been submitted!')" value="Book Appointment!">
+        <!-- <input type="submit" onclick="alert('You request has been submitted!')" value="Book Appointment!"> -->
+        <input type="submit" value="Book Appointment">
         <input type="reset" value="Reset">
     </form>
 </body>
