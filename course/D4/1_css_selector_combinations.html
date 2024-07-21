@@ -9,30 +9,77 @@
       name="description"
       content="This content is ised by the search engines"
     />
+    <style>
+
+      p:first-of-type {
+        color: red;
+      }
+
+    </style>
   </head>
 
   <body>
     <h3>Welcome to the init page</h3>
 
-    <!-- element.class
-        element, element
-        element element-1
-        element-1 > element-2
-        element + element
-        [attribute]
-        [attribute=value]
-        [attribute~=value]
-        [attribute|=value]
-        :link
-        :visited
-        :active
-        :hover
-        :focus
-        :first-letter
-        :first-line
-        :first-child
-        :before
-        :after
+    <!-- <div class="div-class" id="div-id">This is a div
+
+      <div class="div-class-1">This is first child</div>
+      <div>This is second child</div>
+      <div>This is third child</div>
+    </div>
+
+    <br>
+    <br>
+
+    <div>This is another div
+      <div>This is first child div of second parent div</div>
+      <div>This is second child div of second parent div</div>
+    </div> -->
+
+<!--  p + p+ p -->
+    <section>
+      <p>
+        This is a paragraph inside section
+      </p>
+      <p> 
+        This is another paragraph inside section
+      </p>
+      <p> 
+        This is third paragraph inside section
+        </p>
+      <p>
+        This is fourth paragraph inside section
+      </p>
+      <div>
+        <p>This is a prargraph inside div which is inside section </p>
+      </div>
+    </section>
+    
+
+
+    <!-- element.class // div.class-name
+        element, element //
+        // div, p, section 
+        element element-1 // All element-1 inside element (nested as well)
+        // div p
+        element-1 > element-2 // element-2 which is direct child of element-1
+        element + element-2 // element-2 which is immediately after element
+        :first-of-type // first element of its type
+        [attribute] // All elements with attribute
+        [attribute=value] // All elements with attribute and value
+        <p class="p-class p-class-2">
+          p[class~="p-class-2"]
+        [attribute~=value] // All elements with attribute and value in a list (eg class we specify multiple values separated by space)
+        :link // All unvisited links
+        :visited // All visited links
+        :active // All active links
+        :hover // elements on mouse over
+        :focus // elements on focus
+        :first-letter // first letter of the element
+        :first-line // first line of the element
+        :first-child // first child of the element
+        :before // before the element
+        :after // after the element, Eg: * sign after the required field in forms
      -->
 
   </body>
