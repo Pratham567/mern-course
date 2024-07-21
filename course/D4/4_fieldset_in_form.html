@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Fieldset in Form</title>
+    <style>
+      h2 {
+        color: #7b7c7e;
+        text-align: center;
+        margin: 20px 0;
+      }
+
+      .login-form {
+        width: 50%;
+        margin: 10px auto;
+        padding: 20px;
+        border: 1px solid #dddddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+      }
+
+      fieldset {
+        background-color: #eeeeee;
+      }
+
+      legend {
+        background-color: gray;
+        color: white;
+        padding: 5px 10px;
+      }
+
+      form input {
+        display: block;
+        /* Makes input fields take the full width of the fieldset */
+        width: 90%;
+        /* Adds some padding inside the input fields for better readability */
+        padding: 10px;
+        margin: 5px auto;
+        /* Ensures padding does not affect the final size */
+        box-sizing: border-box;
+
+      }
+
+      form label {
+        display: block;
+        margin-left: 5px;
+      }
+
+      form input[type="submit"] {
+        /* Changes cursor to pointer when hovering over the button */
+        cursor: pointer;
+      }
+
+      .appointment-form {
+        width: 80%;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #dddddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+      }
+
+    </style>
+  </head>
+  <body>
+    <h2>The fieldset element + CSS</h2>
+
+    <form class="login-form" action="/action_page.php">
+      <fieldset>
+        <legend>Login:</legend>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" /><br /><br />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" /><br /><br />
+        <input type="submit" value="Submit" />
+      </fieldset>
+    </form>
+
+    <br />
+
+    <!-- <form class="appointment-form" action="/submit-appointment" method="post">
+      <fieldset>
+        <h2>Doctor Appointment Booking</h2>
+        <legend>Book an Appointment</legend>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+        <br /><br />
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required />
+        <br /><br />
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required />
+        <br /><br />
+
+        <label for="doctor">Select Doctor:</label>
+        <select id="doctor" name="doctor" required>
+          <option value="">--Please choose an option--</option>
+          <option value="dr_smith">Dr. Smith</option>
+          <option value="dr_jones">Dr. Jones</option>
+          <option value="dr_williams">Dr. Williams</option>
+        </select>
+
+        <br /><br />
+        <label for="reason">Reason for visit:</label>
+        <textarea id="reason" name="reason" rows="4" required></textarea>
+        <br /><br />
+        <input type="submit" value="Book Appointment" />
+        <input type="reset" value="Reset" />
+      </fieldset> -->
+    </form>
+  </body>
+</html>
