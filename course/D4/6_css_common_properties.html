@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sample Page</title>
+    <style>
+      header {
+        background-color: #007bff;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        font-size: 24px;
+      }
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      .image-div {
+        background-image: url("https://images.unsplash.com/photo-1584697964358-3e14ca57658b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80");
+        background-size: 100% 100%;
+        height: 300px;
+      }
+      .content {
+        padding: 20px;
+        background-size: cover;
+        opacity: 0.9;
+      }
+      .content p {
+        color: #333;
+        line-height: 1.6;
+      }
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+      .box {
+        background-color: #fff;
+        padding: 20px;
+        margin: 20px 0;
+        border: 1px solid #ddd;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .table-class {
+        width: 50%;
+        margin: 10px auto;
+        border-collapse: collapse;
+      }
+
+      .table-class th,
+      .table-class td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      .table-class th {
+        background-color: #f2f2f2;
+        color: #333;
+      }
+
+      .table-class tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      .table-class tr:hover {
+        background-color: #f1f1f1;
+      }
+
+      .inherit-properties {
+        color: #9d2e09;
+        padding: 10px;
+        font-size: 20px;
+      }
+
+      #div1 {
+        padding: 10px;
+        margin: 10px 10px;
+        font-size: 25px;
+        color: rgb(47, 81, 5);
+        background-color: rgb(211, 230, 246);
+        border: 1px solid rgb(47, 81, 5);
+      }
+
+      #div2Child {
+        background-color: beige;
+      }
+      #div3Child {
+        background-color: inherit;
+        font-size: initial;
+      }
+
+      div hr {
+        border: 1px solid #333;
+      }
+
+      div > div {
+        margin: 20px;
+      }
+
+      /* image url: https://images.unsplash.com/photo-1584697964358-3e14ca57658b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80 */
+    </style>
+  </head>
+  <body>
+    <header>Sample Header</header>
+
+    <div class="image-div"></div>
+
+    <div class="content">
+      <div class="box">
+        <p>
+          This is a box inside the content area. It demonstrates margins,
+          padding, borders, and box-shadow.
+        </p>
+      </div>
+
+      <p>
+        This is some text inside the content area. It demonstrates text color,
+        background images, and opacity.
+      </p>
+    </div>
+
+    <hr />
+
+    <!-- Example depicting the common css properties for tables
+     -->
+    <table class="table-class">
+      <tr>
+        <th>Heading1</th>
+        <th>Heading2</th>
+      </tr>
+      <tr>
+        <td>R1, C1</td>
+        <td>R1, C2</td>
+      </tr>
+      <tr>
+        <td>R2, C1</td>
+        <td>R2, C2</td>
+      </tr>
+      <tr>
+        <td>R3, C1</td>
+        <td>R3, C2</td>
+      </tr>
+      <tr>
+        <td>R4, C1</td>
+        <td>R4, C2</td>
+      </tr>
+    </table>
+
+    <hr />
+
+    <!-- 
+        Inheritance: 
+        - Child elements inherit the properties of their parent elements
+        - Inheritance can be overridden by specifying the property in the child element
+        Eg: color, font-size, font-family 
+        
+        Non-inherited properties:
+        - Background properties, border properties, padding, margin, width, height, min-width, max-width, min-height, max-height, float, clear, display, position
+
+        Background properties are not inherited, we may still see the same background color, because of default transparent background of the child element
+    -->
+    <div id="div1">
+      <h4>Example for inheritance</h4>
+      <hr />
+      <div id="div1Child">Child Div 1</div>
+      <div id="div2Child">Child Div 2</div>
+      <div id="div3Child">Child Div 3</div>
+    </div>
+
+    <hr />
+
+    <footer>Sample Footer</footer>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<!-- Write a basic structure of an html  -->
+<html lang="en">
+  <head>
+    <!-- metadata: All the info browser knows, but not displayed-->
+    <title>Table Formatting 1</title>
+    <meta
+      name="description"
+      content="This content is ised by the search engines"
+    />
+    <style>
+
+      h3 {
+        /* A nice shade of blue */
+        color: grey;
+        /* Center-align the text */
+        text-align: center;
+        /* Add some margin above and below the heading */
+        margin: 20px 0;
+      }
+
+      /* Style the table itself */
+      table {
+        width: 100%; /* Make the table take the full width of its container */
+         /*Collapse borders between table cells*/
+        border-collapse: collapse;
+        /* Add some space above the table */
+        margin-top: 20px; 
+      }
+
+      /* Style the table headers */
+      th {
+        /* Light grey background */
+        background-color: #f2f2f2;
+        /* Dark text color */
+        color: #333;
+        /* Align text to the left */
+        text-align: left;
+         /* Add some padding inside the header cells */
+        padding: 8px;
+      }
+
+      /* Style the table data cells */
+      td {
+        /* Light grey border around cells */
+        border: 1px solid #ddd;
+        /* Add some padding inside cells */
+        padding: 8px;
+      }
+
+      /* Add a different background color to even rows for readability */
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      /* Add a hover effect to rows */
+      tr:hover {
+        background-color: #eaeaea;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h3>Welcome to the table formatting</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Header 1</th>
+          <th>Header 2</th>
+          <th>Header 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Data 1</td>
+          <td>Data 2</td>
+          <td>Data 3</td>
+        </tr>
+        <tr>
+          <td>Data 4</td>
+          <td>Data 5</td>
+          <td>Data 6</td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </body>
+</html>
