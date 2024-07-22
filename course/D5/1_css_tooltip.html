@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<!-- Write a basic structure of an html  -->
+<html lang="en">
+
+<head>
+    <!-- metadata: All the info browser knows, but not displayed-->
+    <title>Title</title>
+    <meta name="description" content="This content is ised by the search engines">
+
+    <style>
+        /* Tooltip container */
+        .tooltip {
+            position:relative;
+            display: inline-block;
+            border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+        }
+
+        /* Tooltip text */
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+
+            /* Position the tooltip text - see examples below! */
+            position: absolute;
+            z-index: 1;
+        }
+
+        /* Show the tooltip text when you mouse over the tooltip container */
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <h3>
+        Welcome to the tooltip page
+    </h3>
+
+    <!-- Example of using tooltip -->
+    <div class="tooltip">Hover over me
+        <span class="tooltiptext">Tooltip text</span>
+      </div>
+    
+     
+</body>
+
+</html>

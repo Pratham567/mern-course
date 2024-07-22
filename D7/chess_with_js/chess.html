@@ -1,0 +1,93 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .chess-board {
+        display: grid;
+        grid-template-columns: repeat(8, 50px); /* Creates 8 columns */
+        grid-template-rows: repeat(8, 50px); /* Creates 8 rows */
+        gap: 1px; /* Optional: Adds a gap between squares */
+      }
+
+      .chess-board div {
+        width: 50px;
+        height: 50px;
+        color: #000; /* Default text color for better visibility */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 32px; /* Adjust size of chess piece symbols */
+      }
+
+      /* Adjusted background colors for better visibility */
+      .chess-board .white-square {
+        background-color: #f0f0f0; /* Lighter shade for white squares */
+        color: #000; /* Black text color for pieces */
+      }
+
+      .chess-board .black-square {
+        background-color: #585858; /* Darker shade for black squares */
+        color: #fff; /* White text color for pieces */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chess-board">
+      <!-- Generate 64 squares (8x8) -->
+      <!-- This will be done using a loop in the style section -->
+    </div>
+
+    <script>
+      const board = document.querySelector(".chess-board");
+
+      const pieces = {
+        black: {
+          rook: "♜",
+          knight: "♞",
+          bishop: "♝",
+          queen: "♛",
+          king: "♚",
+          pawn: "♟︎",
+        },
+        white: {
+          rook: "♖",
+          knight: "♘",
+          bishop: "♗",
+          queen: "♕",
+          king: "♔",
+          pawn: "♙",
+        },
+      };
+
+      function getPiece(i) {
+        const row = Math.floor(i / 8);
+        const col = i % 8;
+        if (row === 1) return pieces.black.pawn;
+        if (row === 6) return pieces.white.pawn;
+        if (row === 0 || row === 7) {
+          const color = row === 0 ? "black" : "white";
+          if (col === 0 || col === 7) return pieces[color].rook;
+          if (col === 1 || col === 6) return pieces[color].knight;
+          if (col === 2 || col === 5) return pieces[color].bishop;
+          if (col === 3) return pieces[color].queen;
+          if (col === 4) return pieces[color].king;
+        }
+        return ""; // Empty square
+      }
+
+      for (let i = 0; i < 64; i++) {
+        const square = document.createElement("div");
+        square.innerHTML = getPiece(i); // Add chess piece symbol
+        // Alternate colors
+        if (Math.floor(i / 8) % 2 === 0) {
+          square.className = i % 2 === 0 ? "white-square" : "black-square";
+        } else {
+          square.className = i % 2 !== 0 ? "white-square" : "black-square";
+        }
+        board.appendChild(square);
+      }
+    </script>
+  </body>
+</html>
