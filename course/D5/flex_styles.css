@@ -1,0 +1,155 @@
+/* BASE STYLES */
+:root {
+    --clr-dark: #0f172a;
+    --clr-light: #f1f5f9;
+    --clr-accent: #67464d;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    word-spacing: 1.4px;
+    font-family: "Roboto", sans-serif;
+    color: var(--clr-dark);
+    background-color: var(--clr-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    width: 80%;
+    height: 700px;
+    margin: 0 auto;
+    border: 10px solid var(--clr-dark);
+  }
+  
+  .item {
+    width: 100px;
+    height: 100px;
+    background-color: #c2b6b8;
+    padding: 0.5em;
+    font-weight: 200;
+    font-size: small;
+    color: var(--clr-light);
+    text-align: center;
+    border: 10px solid var(--clr-accent);
+    border-radius: 10px;
+  }
+  
+  /* flex-direction: row(default), column, column-reverse */
+  .container {
+
+    display: flex;
+    /* flex-direction: column; */
+    /* justify-content: space-around; */
+
+    /* align-items: flex-end; */
+
+    /* justify-content: flex-start (default), 
+                        flex-end, center, 
+                        space-between, 
+                        space-around,
+                        space-evenly */
+    /* justify-content: space-around; */
+    
+    /* flex-wrap: wrap; */
+    /* align-content: flex-start; */
+    /* gap: 1em; */
+    
+    /* align-items: stretch (default), 
+    flex-start, 
+    flex-end, 
+    center, 
+    baseline */
+    /* align-items: flex-end; */
+    
+    /* flex-wrap: wrap; */
+    /* align-content: flex-start; */
+    /* align-content: flex-end; */
+    
+    /* gap: 1em; */
+
+  }
+
+  .item-1{
+    flex-grow: 10;
+  }
+  .item-2{
+    flex-grow: 20;
+  }
+  .item-3{
+    flex-grow: 10;
+  }
+
+    /* align-item: baseline aligns based on text */
+  /* .item-1 {
+        font-size: 1.2rem;
+    } */
+
+    /* flex-grow takes the remaining empty space. It takes values from 0-1*/
+    /* .item-1{
+        flex-grow: 1;
+    } */
+
+    /* .item-2{
+        flex-grow: 1;
+    } */
+
+    /* .item-3{
+        flex-grow: 1;
+    } */
+
+    /* flex-shrink: how fast one shrinks compared to another */
+    /* .item-1{
+        flex-shrink: 5;
+    } */
+     
+    /* does not shrink */
+    /* .item-1{
+        flex-shrink: 0;
+    } */
+
+    /* flex-basis: initial size of the item. Overrides the css 
+        values: auto, content, px, %, em, rem, etc
+        auto -> based on the height, width provided
+        content -> based on the content of the element
+    */
+    /* .item-1{
+        flex-basis: 200px;
+    } */
+
+    /* .item-1{
+        width: 200px;
+    } */
+
+    /* flex: shorthand for flex-grow, flex-shrink, flex-basis */
+    /* .item-1{
+        flex: 1 1 200px;
+    } */
+
+    /* align-self: overrides the align-items property for an element*/ 
+    /* .item-2{
+        align-self: center;
+    } */
+
+    /* order: changes the order of the elements . 
+        default order value starts from 0
+    */
+    /* .item-1{
+        order: 3;
+    } */
+
+    .item-3{
+        order:0;
+    }
+
+
