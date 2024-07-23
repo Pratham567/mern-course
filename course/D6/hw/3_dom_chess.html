@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Board with Unicode Pieces</title>
+    <style>
+        .board {
+            display: grid;
+            grid-template-columns: repeat(8, 50px);
+            grid-template-rows: repeat(8, 50px);
+        }
+        .white-square, .black-square {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+        }
+        .white-square {
+            background-color: #f0d9b5;
+        }
+        .black-square {
+            background-color: #b58863;
+        }
+    </style>
+</head>
+<body>
+    <div class="board" id="board"></div>
+    <script>
+      const board = document.getElementById("board");
+      const pieces = {
+        white: {
+          king: "&#9812;",
+          queen: "&#9813;",
+          rook: "&#9814;",
+          bishop: "&#9815;",
+          knight: "&#9816;",
+          pawn: "&#9817;"
+        },
+        black: {
+          king: "&#9818;",
+          queen: "&#9819;",
+          rook: "&#9820;",
+          bishop: "&#9821;",
+          knight: "&#9822;",
+          pawn: "&#9823;"
+        },
+      };
+
+      function getPiece(i) {
+        const row = Math.floor(i / 8);
+        const col = i % 8;
+        if (row === 1) return pieces.black.pawn;
+        if (row === 6) return pieces.white.pawn;
+        if (row === 0 || row === 7) {
+          const color = row === 0 ? "black" : "white";
+          if (col === 0 || col === 7) return pieces[color].rook;
+          if (col === 1 || col === 6) return pieces[color].knight;
+          if (col === 2 || col === 5) return pieces[color].bishop;
+          if (col === 3) return pieces[color].queen;
+          if (col === 4) return pieces[color].king;
+        }
+        return ""; // Empty square
+      }
+
+      for (let i = 0; i < 64; i++) {
+        const square = document.createElement("div");
+        square.innerHTML = getPiece(i); // Add chess piece symbol
+        // Alternate colors
+        if (Math.floor(i / 8) % 2 === 0) {
+          square.className = i % 2 === 0 ? "white-square" : "black-square";
+        } else {
+          square.className = i % 2 !== 0 ? "white-square" : "black-square";
+        }
+        board.appendChild(square);
+      }
+    </script>
+</body>
+</html>
