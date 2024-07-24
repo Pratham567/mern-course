@@ -1,4 +1,21 @@
 
+// Object Literals
+// const person = {
+//     firstName: "Pratham",
+//     lastName: "Gupta",
+//     age: 20,
+//     email: "
+//     ['hobbies']: ['music', 'sports'],
+//     address: {
+//         city: "Delhi",
+//         state: "Delhi"
+//     },
+//     getBirthYear: function() {
+//         return 2020 - this.age;
+//     }
+// }
+// console.log(person);
+
 // // Initialize objects using constructor function
 // // Constructor function
 // function Person(firstName, lastName, dob) {
@@ -81,7 +98,6 @@
 
 
 // // // ES6 Classes
-
 // // ES6 Classes
 // class Person {
 //     constructor(firstName, lastName, dob) {
