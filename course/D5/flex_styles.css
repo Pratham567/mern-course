@@ -80,16 +80,6 @@
 
   }
 
-  .item-1{
-    flex-grow: 10;
-  }
-  .item-2{
-    flex-grow: 20;
-  }
-  .item-3{
-    flex-grow: 10;
-  }
-
     /* align-item: baseline aligns based on text */
   /* .item-1 {
         font-size: 1.2rem;
@@ -137,6 +127,7 @@
     } */
 
     /* align-self: overrides the align-items property for an element*/ 
+
     /* .item-2{
         align-self: center;
     } */
@@ -151,5 +142,6 @@
     .item-3{
         order:0;
     }
+
 
 
