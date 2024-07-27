@@ -441,32 +441,33 @@ const firstNameArray_1 = personArray.map(extractFirstName);
 
 // // // Conditionals
 // if
-const x1 = "10";
-const x2 = '10';
-if(10 == 10 ) {
-    console.log("x1 is 10");
-}
 
-if(x1 === 10) {
-    console.log("x1 is equal to '10'");
-}
-// if(x1 == x2) {
-//     console.log("x1 is equal to x2");
-// }
-// if(x1 === x2) {
-//     console.log("x1 === x2");
+// const x1 = "10";
+// const x2 = '10';
+// if(10 == 10 ) {
+//     console.log("x1 is 10");
 // }
 
-// check if a number is equal to x1, and the number is even
-if(x1 == 10 && 10 % 2 == 1) { // AND Operator
-    console.log("x1 is 10 and it is even");
-}
+// if(x1 === 10) {
+//     console.log("x1 is equal to '10'");
+// }
+// // if(x1 == x2) {
+// //     console.log("x1 is equal to x2");
+// // }
+// // if(x1 === x2) {
+// //     console.log("x1 === x2");
+// // }
 
-if(x1 == 11 || 10 % 2 == 1) { // OR operator
-    console.log("x1 is 10 or it is odd");
-} else {
-    console.log("x1 is not 10 and it is not odd");
-}
+// // check if a number is equal to x1, and the number is even
+// if(x1 == 10 && 10 % 2 == 1) { // AND Operator
+//     console.log("x1 is 10 and it is even");
+// }
+
+// if(x1 == 11 || 10 % 2 == 1) { // OR operator
+//     console.log("x1 is 10 or it is odd");
+// } else {
+//     console.log("x1 is not 10 and it is not odd");
+// }
 
 
 // // clubbing multiple conditions
@@ -476,20 +477,22 @@ if(x1 == 11 || 10 % 2 == 1) { // OR operator
 // // A year is a leap year if it is divisible by 400
 const year = 2020;
 
-if(year % 4== 0){
-    if(year %100 != 0 ){
-        console.log(`${year} is a leap year`);
-    }
-    else{
-        // year is divisible by 100
-        if(year % 400 == 0){
-            console.log(`${year} is a leap year`);
-        }
-        else{
-            console.log(`${year} is not a leap year`);
-        }
-    }
-}
+
+// if(year % 4== 0){
+//     if(year %100 != 0 ){
+//         console.log(`${year} is a leap year`);
+//     }
+//     else{
+//         // year is divisible by 100
+//         if(year % 400 == 0){
+//             console.log(`${year} is a leap year`);
+//         }
+//         else{
+//             console.log(`${year} is not a leap year`);
+//         }
+//     }
+// }
+
 
 // if(x1 === 10 && x2 === '10') {
 //     console.log("x1 is 10 and x2 is '20'");

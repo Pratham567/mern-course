@@ -28,9 +28,10 @@
     </style>
   </head>
   <body>
-    <div class="board" id="board"></div>
     <script>
-      const board = document.getElementById("board");
+      const board = document.createElement("div");
+      board.className = "board";
+      document.body.appendChild(board);
 
       for (let i = 0; i < 64; i++) {
         const square = document.createElement("div");
