@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<!-- Write a basic structure of an html  -->
+<html lang="en">
+  <head>
+    <!-- metadata: All the info browser knows, but not displayed-->
+    <title>Title</title>
+    <meta
+      name="description"
+      content="This content is used by the search engines"
+    />
+    <style>
+      #header-id-2 {
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+        /* other styling properties as needed */
+      }
+
+      .header-class-2 h2 {
+        font-size: 24px;
+        font-weight: bold;
+        color: blue;
+        /* other styling properties as needed */
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- create an header with proper class -->
+    <header class="header-class" id="header-id">
+      <h2>Header</h2>
+    </header>
+
+    <div>
+      <p>This is a paragraph inside div</p>
+      <p>This is another paragraph inside div</p>
+
+      <div>
+        <p>This is a paragraph inside div which is also inside a div</p>
+        <p>This is another paragraph inside div which is also inside a div</p>
+      </div>
+    </div>
+
+    <div>
+      <ul class="list">
+        
+        <li class="list-item">Item 1 <!-- comment inside the li --></li>
+        <li class="list-item">Item 2</li>
+        <li class="list-item">Item 3</li>
+      </ul>
+        <li class="list-item">Item 4 outside</li>
+    </div>
+
+    <script src="dom_traversal.js"></script>
+  </body>
+</html>

@@ -441,33 +441,32 @@ const firstNameArray_1 = personArray.map(extractFirstName);
 
 // // // Conditionals
 // if
+const x1 = "10";
+const x2 = '10';
+if(10 == 10 ) {
+    console.log("x1 is 10");
+}
 
-// const x1 = "10";
-// const x2 = '10';
-// if(10 == 10 ) {
-//     console.log("x1 is 10");
+if(x1 === 10) {
+    console.log("x1 is equal to '10'");
+}
+// if(x1 == x2) {
+//     console.log("x1 is equal to x2");
+// }
+// if(x1 === x2) {
+//     console.log("x1 === x2");
 // }
 
-// if(x1 === 10) {
-//     console.log("x1 is equal to '10'");
-// }
-// // if(x1 == x2) {
-// //     console.log("x1 is equal to x2");
-// // }
-// // if(x1 === x2) {
-// //     console.log("x1 === x2");
-// // }
+// check if a number is equal to x1, and the number is even
+if(x1 == 10 && 10 % 2 == 1) { // AND Operator
+    console.log("x1 is 10 and it is even");
+}
 
-// // check if a number is equal to x1, and the number is even
-// if(x1 == 10 && 10 % 2 == 1) { // AND Operator
-//     console.log("x1 is 10 and it is even");
-// }
-
-// if(x1 == 11 || 10 % 2 == 1) { // OR operator
-//     console.log("x1 is 10 or it is odd");
-// } else {
-//     console.log("x1 is not 10 and it is not odd");
-// }
+if(x1 == 11 || 10 % 2 == 1) { // OR operator
+    console.log("x1 is 10 or it is odd");
+} else {
+    console.log("x1 is not 10 and it is not odd");
+}
 
 
 // // clubbing multiple conditions
@@ -477,21 +476,20 @@ const firstNameArray_1 = personArray.map(extractFirstName);
 // // A year is a leap year if it is divisible by 400
 const year = 2020;
 
-
-// if(year % 4== 0){
-//     if(year %100 != 0 ){
-//         console.log(`${year} is a leap year`);
-//     }
-//     else{
-//         // year is divisible by 100
-//         if(year % 400 == 0){
-//             console.log(`${year} is a leap year`);
-//         }
-//         else{
-//             console.log(`${year} is not a leap year`);
-//         }
-//     }
-// }
+if(year % 4== 0){
+    if(year %100 != 0 ){
+        console.log(`${year} is a leap year`);
+    }
+    else{
+        // year is divisible by 100
+        if(year % 400 == 0){
+            console.log(`${year} is a leap year`);
+        }
+        else{
+            console.log(`${year} is not a leap year`);
+        }
+    }
+}
 
 
 // if(x1 === 10 && x2 === '10') {
@@ -571,3 +569,76 @@ const year = 2020;
 // //     console.log(`${year} is a leap year`);
 // // }
 
+// // ternary operator
+// const x3 = 10;
+// let isEvenNumber;
+// if(x3 % 2 === 0) {
+//     isEvenNumber = true;
+//     console.log(`${x3} is even`);
+// }
+// else {
+//     console.log(`${x3} is odd`);
+//     isEvenNumber = false;
+// }
+// isEvenNumber = x3 % 2 === 0 ? true : false;
+
+// // switch
+// const color = "red";
+// switch(color) {
+//     case "red":
+//         console.log("Color is red");
+//         break;
+//     case "blue":
+//         console.log("Color is blue");
+//         break;
+//     default:
+//         console.log("Color is not red or blue");
+//         break;
+// }
+
+// // // Functions
+// function greet() {
+//     console.log("Hello");
+// }
+// greet();
+// // function with parameters
+// function greet1(name) {
+//     console.log(`Hello ${name}`);
+// }
+// greet1("Pratham");
+// // default parameter
+// function greet2(name = "Pratham") {
+//     console.log(`Hello ${name}`);
+// }
+// greet2();
+// greet2("Prashant");
+
+// // function with return value
+// function add(num1, num2) {
+//     return num1 + num2;
+// }
+// let sum = add(10, 20);
+// console.log(sum);
+// // console.log(add(5, 10));
+
+// // HW: arrow function
+// const add0 = (num1, num2) => {
+//     return num1 + num2;
+// }
+// console.log(add0(5, 10));
+
+// // arrow function with single statement
+// const add1 = (num1, num2) => num1 + num2;
+// console.log(add1(5, 10));
+// const add2 = num1 => num1 + 5;
+// console.log(add2(5));
+// // arrow function with no parameters
+// const sayHello = () => console.log("Hello");
+// sayHello();
+// // Use arrow function to return square of a number
+// const square = num => num * num;
+// console.log(square(5));
+// // use arrow function to iterate through each element of an array
+// todos.forEach((todo) => console.log(todo.text));
+// console.log("Using arrow function with single parameter:");
+// todos.forEach(todo => console.log(todo.text)); // For single parameter, parenthesis can be avoided
