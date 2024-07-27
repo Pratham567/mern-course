@@ -4,35 +4,35 @@
 // A variable or function declared in the global scope is accessible from any other scope
 // Global variables can be accessed and modified from any other scope, which can lead to potential issues with variable naming conflicts and security.
 
-var globalVar = "I am global";
+// var globalVar = "I am global";
 
-if(true){
-    console.log(globalVar); // Accessible here
-    var blockScopedVar = "I am block";
-    let blockScopedLet = "I am block let";
-    console.log(blockScopedVar); // Accessible here
-}
+// if(true){
+//     console.log(globalVar); // Accessible here
+//     var blockScopedVar = "I am block";
+//     let blockScopedLet = "I am block let";
+//     console.log(blockScopedVar); // Accessible here
+// }
 // console.log(blockScopedVar); // ??
 // console.log(blockScopedLet); // ??
 
 
-function accessGlobalVar() {
-    console.log(globalVar); // Accessible here
-    var localVar = "I am local";
-}
+// function accessGlobalVar() {
+//     console.log(globalVar); // Accessible here
+//     var localVar = "I am local";
+// }
 
 // console.log(localVar);
-console.log(globalVar); // Also accessible here
+// console.log(globalVar); // Also accessible here
 
 // 2. Local (or Function) Scope
 // Variables and functions declared within a function are in the local scope of that function. 
 // They can only be accessed and used within that function.
 // Each function creates a new scope.
-function myFunction() {
-    var localVar = "I am local";
-    console.log(localVar); // Accessible here
-}
-myFunction();
+// function myFunction() {
+//     var localVar = "I am local";
+//     console.log(localVar); // Accessible here
+// }
+// myFunction();
 
 // Block Scope (ES6)
 // let and const declarations are block-scoped. This means they are only accessible within the block ({}) they are defined in, such as loops or if statements.
@@ -57,3 +57,29 @@ myFunction();
 // }
 
 // outerFunction();
+
+
+
+
+
+
+
+
+
+
+var globalVar1 = "I am global Var";
+let globalLet1 = "I am global let";
+
+if(true){
+    console.log(globalVar1); // Accessible here
+    var blockScopedVar1 = "I am block";
+    let blockScopedLet1 = "I am block let";
+    console.log(blockScopedVar1); // Accessible here
+    var globalVar1 = "I am global 2";
+    let globalLet1 = "I am global let 2";
+}
+console.log(blockScopedVar1); // ??
+// console.log(blockScopedLet1); // Error
+console.log(globalVar1); // Also accessible here
+console.log(globalLet1); // Also accessible here
+
