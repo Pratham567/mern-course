@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Blog Post Page with Validation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .post {
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+      }
+      .post-title {
+        font-size: 24px;
+        color: #333;
+      }
+      .post-date,
+      .post-visibility,
+      .post-author,
+      .post-tags {
+        font-size: 14px;
+        color: #666;
+      }
+      .post-content {
+        margin-top: 10px;
+      }
+      .error {
+        color: red;
+      }
+      form > br {
+        margin-bottom: 10px;
+      }
+      label {
+        margin-right: 10px;
+      }
+      select,
+      input[type="text"],
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+      }
+      button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .tag {
+        display: inline-block;
+        background-color: #007bff;
+        color: white;
+        padding: 2px 8px;
+        margin: 2px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Add a New Blog Post</h3>
+    <form id="postForm">
+      <input type="text" id="postTitle" placeholder="Title" required />
+      <br /><br />
+      <textarea
+        id="postContent"
+        rows="4"
+        placeholder="Content"
+        required
+      ></textarea>
+      <br /><br />
+
+      <!-- Radio Buttons for Post Visibility -->
+      <label
+        ><input type="radio" name="visibility" value="Public" checked />
+        Public</label
+      >
+      <label
+        ><input type="radio" name="visibility" value="Private" /> Private</label
+      >
+      <br /><br />
+
+      <!-- Multi-Select for Tags -->
+      <select id="postTags" multiple>
+        <option value="Technology">Technology</option>
+        <option value="Education">Education</option>
+        <option value="Lifestyle">Lifestyle</option>
+      </select>
+      <br /><br />
+
+      <!-- Dropdown for Author -->
+      <select id="postAuthor">
+        <option value="Author 1">Author 1</option>
+        <option value="Author 2">Author 2</option>
+        <option value="Author 3">Author 3</option>
+      </select>
+      <br /><br />
+
+      <button type="submit">Add Post</button>
+      <p id="errorMessage" class="error"></p>
+    </form>
+
+    <div id="postsContainer"></div>
+
+    <script>
+      document
+        .getElementById("postForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Collecting form values
+          const title = document.getElementById("postTitle").value;
+          const content = document.getElementById("postContent").value;
+          const visibility = document.querySelector(
+            'input[name="visibility"]:checked'
+          ).value;
+          const author = document.getElementById("postAuthor").value;
+          const selectedTags = Array.from(
+            document.getElementById("postTags").selectedOptions
+          ).map((option) => option.value);
+
+          // Validation (simple example)
+          if (!title || !content) {
+            document.getElementById("errorMessage").textContent =
+              "Title and content are required.";
+            return;
+          }
+
+          // Creating and appending the post
+          const postContainer = document.getElementById("postsContainer"); // Ensure this exists in your HTML
+          const postElement = document.createElement("div");
+          postElement.innerHTML = `
+    <h3>${title}</h2>
+    <p>${content}</p>
+    <p>Visibility: ${visibility}</p>
+    <p>Author: ${author}</p>
+    <p>Tags: ${selectedTags.join(", ")}</p>
+  `;
+
+          // Check if there are any posts already, if so, insert before the first one
+          if (postContainer.firstChild) {
+            postContainer.insertBefore(postElement, postContainer.firstChild);
+          } else {
+            postContainer.appendChild(postElement);
+          }
+
+          // Clear form fields after submission
+          document.getElementById("postForm").reset();
+        });
+    </script>
+  </body>
+</html>

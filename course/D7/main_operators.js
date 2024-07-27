@@ -83,9 +83,5 @@ console.log(p1);
 // <=	Less than or equal to
 // ?	ternary operator
 
-var v11 = 10;
-var s1 = "10";
-if(v11 >= s1) {
-    // console.log("Equal");
-}
+
 
