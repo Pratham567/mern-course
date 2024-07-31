@@ -65,6 +65,8 @@
 
 
 // Outer HTML vs Inner HTML
+// console.log(document.body.innerHTML);
+
 // Outer HTML includes the element itself
 // Inner HTML does not include the element itself
 // console.log(document.body.outerHTML);
@@ -97,14 +99,28 @@
 
 
 // // Selecting all forms of the body
+// console.log(document.forms);
+// let forms = document.forms;
+
+
+
+
+
 // Note: this collection is not an array but an HTMLCollection
+
 // HW: Read through the HTMLCollection
 // console.log(document.forms);
 // console.log(document.forms[0]);
 
 // // Selecting all links of the body
+// let links = document.links;
+// console.log(links);
 
 // // Selecting all images of the body
 
 // // Selecting all scripts of the body
+let scripts = document.scripts;
+console.log(scripts);
+console.log(scripts[0].outerHTML);
+
 

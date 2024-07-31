@@ -79,12 +79,25 @@ class PersonClass {
     }
 }
 const person2 = new PersonClass("Pratham", "Gupta", "08-09-2000");
-// console.log(person2);
-// console.log(typeof person2);
-// console.log(person2.getBirthYear());
-// console.log(person2.getFullName());
 
+// Create a Teacher class which inherits from PersonClass
+// Also add another variable: job
 
+class Teacher extends PersonClass {
+    constructor(firstName, lastName, dob, job) {
+        super(firstName, lastName, dob);
+        this.job = job;
+    }
+    getJob() {
+        return this.job;
+    }
+}
+let teacherObject = new Teacher("Pratham", "Gupta", "08-09-2000", "Teacher");
+console.log(teacherObject);
+console.log(typeof teacherObject);
+console.log(teacherObject.getBirthYear());
+console.log(teacherObject.getFullName());
+console.log(teacherObject.getJob());
 
 
 

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<!-- Write a basic structure of an html  -->
+<html lang="en">
+  <head>
+    <!-- metadata: All the info browser knows, but not displayed-->
+    <title>Title</title>
+    <meta
+      name="description"
+      content="This content is used by the search engines"
+    />
+    <style>
+      #header-id-2 {
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+        /* other styling properties as needed */
+      }
+
+      .header-class-2 h2 {
+        font-size: 24px;
+        font-weight: bold;
+        color: blue;
+        /* other styling properties as needed */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">This is the header div</div>
+    <div class="container">
+      <h2>Heading inside div-2</h2>
+      <p>This is a paragraph</p>
+      <p>This is another paragraph</p>
+      <div>
+        <p>This is a paragraph inside div which is also inside a div</p>
+        <p>This is another paragraph inside div which is also inside a div</p>
+      </div>
+    </div>
+    <br />
+
+    <div class="random" style="border: 4px solid red">
+      This is a div with inline css
+    </div>
+
+    <br />
+    <script>
+      // // // // Creating an element
+
+      // // Creating an element
+      // const newDivElem = document.createElement("div");
+      // const bodyElem = document.body;
+      // bodyElem.appendChild(newDivElem);
+      // newDivElem.textContent = "This is a new div element";
+
+      // const bodyElemFromNewDiv = newDivElem.parentElement;
+      // console.log(bodyElemFromNewDiv);
+      // const firstChildOfBody = bodyElemFromNewDiv.firstElementChild;
+      // firstChildOfBody.appendChild(newDivElem);
+
+      // const newDivElem_1 = document.querySelector("div.header > div");
+      // bodyElem.appendChild(newDivElem_1); 
+
+
+
+
+
+
+
+
+
+
+      // const divElem = document.createElement("div");
+      // Append it to the body
+      // document.body.appendChild(divElem);
+      // Add some text to the div using textContent
+      // add some style to the div
+
+
+
+
+      // // Add class and id and attribute
+      // divElem.classList.add("new-class");
+      // divElem.id = "new-id";
+
+
+
+
+
+
+      // create a text Node and add to the div (new div)
+      // const para = document.createElement("p");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // Question: add it to the last element of the header div
+      // const header = document.querySelector("header");
+
+
+
+
+      // Question: add it to the first element of the div which has class random
+      // const newDivElem = document.createElement("div");
+      // newDivElem.textContent = "This is a new div element";
+      // const random = document.querySelector("div.random");
+      // random.insertBefore(newDivElem, null);
+
+      // Q: create and insert an element between h2 and p
+      const newP = document.createElement("p");
+      newP.textContent = "This is a new paragraph from JS";
+      const divElem = document.querySelector("div.container");
+      const adjacentPElem = divElem.querySelector("div.container > p");
+      divElem.insertBefore(newP, adjacentPElem);
+      
+      
+      
+      // random.insertBefore(divElem, random.firstChild);
+    </script>
+  </body>
+</html>

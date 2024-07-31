@@ -1,6 +1,24 @@
 // // // // Creating an element
 
 // // Creating an element
+const newDivElem = document.createElement("div");
+const bodyElem = document.body;
+bodyElem.appendChild(newDivElem);
+newDivElem.textContent = "This is a new div element";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // const divElem = document.createElement("div");
 // Append it to the body
 // document.body.appendChild(divElem);
