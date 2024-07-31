@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<!-- Write a basic structure of an html  -->
+<html lang="en">
+
+<head>
+    <!-- metadata: All the info browser knows, but not displayed-->
+    <title>Title</title>
+    <meta name="description" content="This content is ised by the search engines">
+</head>
+
+<body>
+    <h3>
+        Welcome to the init page
+    </h3>
+
+    <script>
+        
+        let a = 10;
+        let b = 20;
+        let c = 30;
+        
+        function sum(a, b) {
+            return a + b;
+        }
+
+        function sum3(a, b, c) {
+            const sum2 = sum(a, b);
+            const sum3 = sum(sum2, c);
+            return sum3;
+        }
+
+        console.log(sum3(1, 2, 3));
+        
+    </script>
+     
+</body>
+
+</html>
