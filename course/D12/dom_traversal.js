@@ -7,11 +7,18 @@ const body = document.body;
 
 // Children
 // console.log(body.children);
+// const headerElem = body.children[0];
+// console.log(headerElem);
+// const firstDiv = ;
+// console.log(body.children[1]);
+// console.log(body.children[1].parentNode);
+
+
 
 // select all ul of class: .list
-// var items = document.querySelector(".list");
-// console.log(items.children);
-
+// var items = document.querySelectorAll(".list");
+// console.log(items);
+// console.log(items[0].children);
 
 
 
@@ -25,19 +32,46 @@ const body = document.body;
 
 
 // change color of parent node
-// items.parentNode.style.backgroundColor = "lightgray";
+// var items = document.querySelectorAll(".list");
+// console.log(items);
+// items[0].parentNode.style.backgroundColor = "lightgray";
 
 // Question ??
-// console.log(items.parentNode.children);
-// console.log(items.parentNode.parentNode);
+// console.log(items.parentNode);
+// items.parentNode = {};
+// const itemObj = items.parentNode;
+// console.log(itemObj.abc.def);
+// HW:
+
+
+// var items = document.querySelectorAll(".list");
+// console.log(items[0].parentNode.children);
+// console.log(items[0].parentNode.parentNode.parentNode);
+
+
+
 
 // First Element Child
 // The firstElementChild property returns the first child element of the specified element.
+// const headerElem = body.children[0];
+// const h2Elem = headerElem.firstElementChild;
+// console.log(h2Elem);
+// console.log(h2Elem.firstElementChild);
 // console.log(items.firstElementChild);
 
 // Last Element Child
 // The lastElementChild property returns the last child element of the specified element.
-// console.log(items.lastElementChild);
+// var items = document.querySelectorAll(".list");
+// console.log(items[0].lastElementChild);
+// items[0].lastElementChild.style.backgroundColor = "red";
+// HW: diff between backgrounColor and background
+
+
+
+
+
+
+
 
 // Next Element Sibling
 // The nextElementSibling property returns the element immediately following the specified element, in the same tree level.

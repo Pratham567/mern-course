@@ -22,6 +22,7 @@
 
 
 
+
 // // Asynchronous example
 // console.log('I');
 // setTimeout(() => {
@@ -46,15 +47,19 @@
 
 
 
-
-
-
 // setInterval(() => {
 //     console.log('Hello');
 // }, 1000);
 
 
-// // clearInterval()
+
+
+
+
+
+
+
+// // HW: clearInterval()
 // let counter = 0;
 // const intervalId = setInterval(() => {
 //     console.log('Hello');
