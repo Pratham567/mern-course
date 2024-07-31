@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .weather-info {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Weather App</h1>
+    <form id="weather-form">
+      <label for="city">Enter city name:</label>
+      <input type="text" id="city" name="city" required />
+      <button type="submit">Get Weather</button>
+    </form>
+    <div class="weather-info" id="weather-info"></div>
+
+    <script>
+      async function getWeather(city) {
+        const apiKey = "cfe7ae772e45b97e547d93639fe2a0c4";
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=cfe7ae772e45b97e547d93639fe2a0c4`;
+        const response = await fetch(url);
+        const data = await response.json();
+        // console.log(data);
+        return data;
+      }
+
+      // Get reference to the form element
+      const weatherForm = document.getElementById("weather-form");
+
+      // Add an event listener to the form element
+      weatherForm
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Get the city name from the input field
+          const city = document.getElementById("city").value;
+          
+          // get reference to element where to display
+          const weatherInfoElement = document.getElementById("weather-info");
+
+          const resultDatapromise = getWeather(city);
+          resultDatapromise
+            .then((data) => {
+              // Success Scenario
+
+              // console.log(data);
+              
+              // Extract the data from the response and display it
+              // in the weather-info div
+              weatherInfoElement.innerHTML = `
+                        <h2>Weather in ${data.name}</h2>
+                        <p>Temperature: ${data.main.temp} °C</p>
+                        <p>Weather: ${data.weather[0].description}</p>
+                        <p>Humidity: ${data.main.humidity}%</p>
+                        <p>Wind Speed: ${data.wind.speed} m/s</p>
+                        `;
+            })
+            .catch((error) => {
+              // Promise Error scenario
+
+              // console.log(error);
+              weatherInfoElement.innerHTML = `<p>Error: Something went wrong</p>`;
+            });
+        });
+
+      // Q: Try to achieve the same thing without using await and async
+    </script>
+  </body>
+</html>
+
+<!-- 
+
+fetch(url)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        const weatherInfoElement = document.getElementById('weather-info');
+        weatherInfoElement.innerHTML = `
+            <h2>Weather in ${data.name}</h2>
+            <p>Temperature: ${data.main.temp} °C</p>
+            <p>Weather: ${data.weather[0].description}</p>
+            <p>Humidity: ${data.main.humidity}%</p>
+            <p>Wind Speed: ${data.wind.speed} m/s</p>
+        `;
+    })
+    .catch(error => {
+        const weatherInfoElement = document.getElementById('weather-info');
+        weatherInfoElement.innerHTML = `<p>Error: ${error.message}</p>`;
+    });
+
+-->
+
+
+<!-- 
+if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+
+-->

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<!-- Write a basic structure of an html  -->
+<html lang="en">
+  <head>
+    <!-- metadata: All the info browser knows, but not displayed-->
+    <title>Title</title>
+    <meta
+      name="description"
+      content="This content is ised by the search engines"
+    />
+  </head>
+
+  <body>
+    <h3>Welcome to the event listener page</h3>
+
+    <!-- EventListener to be added via JS-->
+    <div id="parent">
+      <button id="btn">Event via eventListener</button>
+    </div>
+
+    <ul id="list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+
+    <script>
+      // 1. Event listener
+      // get reference to the element and then add eventListener
+      // const btn = document.getElementById('btn');
+      // btn.addEventListener('click', () => alert('button clicked'));
+      
+      
+      
+      
+      // Can we add multiple events of same type to same element ?
+      // Can we pass a function to eventListener ?
+      // Does eventListener use callbacks ?
+
+      // Q: Write an event listener to change the text of the button on double click
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // btn.addEventListener('dblclick', () => {
+      //     btn.textContent = 'Button double clicked';
+      // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // // 2. Event object
+      // btn.addEventListener('click', function (event) {
+      //     // console.log(event);
+      //     // console.log(event.type);
+      //     // console.log(event.target);
+      //     // console.log(event.currentTarget);
+      //     // console.log(event.clientX, event.clientY);
+      // });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // 3. Event bubbling
+      // when an event is added to parent as well as child,
+      // the event is bubbled up to the parent from the child
+      // const parent = document.getElementById('parent');
+      // parent.addEventListener('click', function () {
+      // const btn = document.getElementById('btn');
+      //     console.log('Parent clicked');
+      // });
+      // btn.addEventListener('click', function () {
+      //     console.log('Button clicked');
+      // });
+      // HW: how we can make the parent event execute before child
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // 4. Event delegation, apply to only specific targets
+      // const list = document.getElementById('list');
+      // list.addEventListener('click', function (event) {
+      //     // Q: what is the behavior ?
+      //     console.log(event.target.textContent);
+
+      //     // Q: What if I want to apply event only to LI elements
+      // });
+
+      //if (event.target.tagName === 'LI')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      // 5. Removing event listener
+      // function handleClick() {
+      //     console.log('Button clicked');
+      // }
+      // btn.addEventListener('click', handleClick);
+      // btn.removeEventListener('click', handleClick);
+
+
+
+
+
+
+
+
+
+      
+      // 6. Event listener options
+      // btn.addEventListener('click', function () {
+      //     console.log('Button clicked');
+      // }, {
+      //     once: true
+      // });
+
+    </script>
+  </body>
+</html>

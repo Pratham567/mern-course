@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drag and Drop Multiple Times</title>
+    <style>
+        .wrapper {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        .draggable {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            line-height: 100px;
+            margin: 10px;
+            cursor: grab;
+        }
+
+        #dropzone {
+            width: 300px;
+            height: 300px;
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        #dropzone.dragover, .container.dragover {
+            border-color: #3498db;
+        }
+
+        .drop-text {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 14px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container" id="container">
+            <div class="draggable" draggable="true" id="draggable1">Drag me 1</div>
+            <div class="draggable" draggable="true" id="draggable2">Drag me 2</div>
+            <div class="drop-text">Drop here</div>
+        </div>
+        <div id="dropzone">
+            <div class="drop-text">Drop here</div>
+        </div>
+    </div>
+
+    <script>
+        const draggables = document.querySelectorAll('.draggable');
+        const dropzone = document.getElementById('dropzone');
+        const container = document.getElementById('container');
+
+        draggables.forEach(draggable => {
+            draggable.addEventListener('dragstart', function(event) {
+                event.dataTransfer.setData('text/plain', event.target.id);
+            });
+        });
+
+        [dropzone, container].forEach(zone => {
+            zone.addEventListener('dragover', function(event) {
+                event.preventDefault();
+                zone.classList.add('dragover');
+            });
+
+            zone.addEventListener('dragleave', function(event) {
+                zone.classList.remove('dragover');
+            });
+
+            zone.addEventListener('drop', function(event) {
+                event.preventDefault();
+                zone.classList.remove('dragover');
+                const data = event.dataTransfer.getData('text/plain');
+                const draggableElement = document.getElementById(data);
+                zone.appendChild(draggableElement);
+            });
+        });
+    </script>
+</body>
+</html>

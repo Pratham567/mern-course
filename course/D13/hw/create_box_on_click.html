@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Box on Click</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+        #container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background-color: #f0f0f0;
+        }
+        .box {
+            width: 50px;
+            height: 50px;
+            background-color: #3498db;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="container" onclick="addBox(event)"></div>
+
+    <script>
+        function addBox(event) {
+            // Create a new div element for the box
+            var box = document.createElement('div');
+            box.className = 'box';
+
+            // Set the position of the box to the click location
+            box.style.left = event.clientX + 'px';
+            box.style.top = event.clientY + 'px';
+
+            // Append the box to the container
+            document.getElementById('container').appendChild(box);
+        }
+    </script>
+</body>
+</html>
