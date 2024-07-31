@@ -16,15 +16,119 @@
   </head>
   <body>
     <h1>Weather App</h1>
-    <form id="weather-form">
+    <!-- http://127.0.0.1:3000/course/D13/practice/2_weather_app.html?city=London
+      -->
+    <form id="weather-form" >
       <label for="city">Enter city name:</label>
       <input type="text" id="city" name="city" required />
       <button type="submit">Get Weather</button>
     </form>
     <div class="weather-info" id="weather-info"></div>
 
+
+
+
     <script>
+      // Q: get reference to the form
+      const formElem = document.querySelector("#weather-form");
+
+      // Q: add event listener for submit event
+      formElem.addEventListener("submit", getInputAndPrintTemp);
+      
+      function getInputAndPrintTemp(event){
+        event.preventDefault();
+        // console.log(event);
+        // get reference to the input field
+        const cityInput = document.querySelector("#city");
+        // get value from input field
+        const city = cityInput.value;
+        // console.log("city", city);
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5aad59a746bec23d65194d32609c2639&units=metric%60`
+        console.log(url)
+        
+        getWeather(url);
+      }
+
+      
+
+      async function getWeather(url){
+        const responseVar = await fetch(url);
+        
+        // wait for promise to complete, 
+        // and then extract the result
+        // console.log("responseVar", responseVar);
+        const jsonData = await responseVar.json();
+        // console.log("jsonData", jsonData)
+        // print main
+        const main = jsonData.main;
+        // console.log("main", main)
+        // get temp
+        const temp = main.temp;
+        // console.log("temp", temp)
+        
+        const divElem = document.querySelector(".weather-info");
+        divElem.textContent = temp;
+      }
+    
+      // Q: get reference to the div (.weather-info)
+      // , and set temp as textContent
+
+
 
     </script>
   </body>
 </html>
+
+<!-- 
+
+
+-->
+
+
+
+<!-- 
+function dummy(responseObject){
+        // console.log("responseObject", responseObject)
+        console.log("successPromise");
+      }
+      function failedPromise(){
+        console.log("failedPromise");
+      }
+      async function getWeather(){
+        const apiResponsePromise = fetch(url);
+        console.log("apiResponsePromise", apiResponsePromise)
+        apiResponsePromise
+        .then(dummy)
+        .catch(failedPromise)
+      }
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- async function getWeather(city) {
+        const apiKey = "cfe7ae772e45b97e547d93639fe2a0c4";
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=cfe7ae772e45b97e547d93639fe2a0c4`;
+        const response = await fetch(url);
+        const data = await response.json();
+        // console.log(data);
+        return data;
+      }
+
+-->
