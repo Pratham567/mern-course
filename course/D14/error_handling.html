@@ -1,0 +1,113 @@
+<html>
+  <head> </head>
+
+  <body>
+    <script>
+
+        function divide(a, b){
+            console.log(a, b, c);
+            if(b === 0){
+                throw new Error("Divide by zero error");
+            }
+            return a/b
+        }
+        console.log(1);
+        let num1 = 10;
+        let num2 = 0;
+        // console.log(divide(num1, num2));
+
+
+        async function getWeather(){
+            const url = `https://api123.openweathermap.org/data/2.5/weather?q=Moradabad&appid=5aad59a746bec23d65194d32609c2639&units=metric%60`
+            console.log("A");
+            const responseVar = await fetch(url);
+            console.log("B");
+            if(responseVar.ok){
+                console.log("C");
+                const jsonData = await responseVar.json();
+                console.log("D");
+                // getElement from Document
+                // update the element.innerHTML
+            }
+            else{
+                console.log("E");
+                throw new Error("Data not fetched");
+                console.log("F");
+            }
+        }
+
+
+
+
+
+
+
+
+
+            // try {
+            //     console.log("A");
+            //     const responseVar = await fetch(url);
+            //     console.log("B");
+            //     if(responseVar.ok){
+            //         console.log("C");
+            //         const jsonData = await responseVar.json();
+            //         console.log("D");
+            //     }
+            //     else{
+            //         console.log("E");
+            //         throw new Error("Data not fetched");
+            //         console.log("F");
+            //     }
+            // }
+            // catch(err){
+            //     console.log("G: Error occured");
+            //     console.log(err);
+            //     console.log(err.name);
+            //     console.log(err.message);
+            // }
+
+            // console.log(responseVar);
+                // console.log("b");
+                // console.log(jsonData);
+                // console.log("c");
+                // const main = jsonData.main;
+                // console.log(main)
+                // const temp = main.temp;
+                // console.log(temp);
+
+        
+        // console.log(3);
+
+        // try{
+        //     console.log(divide(num1, num2));
+        // }
+        // catch(err){
+        //     console.log("Error occured");
+        //     console.log(err);
+        //     console.log(err.name);
+        //     console.log(err.message);
+        // }
+
+        // console.log(4);
+
+        // console.log(variable);
+    
+        // console.log(variable2);
+        // try {
+        //     console.log(variable2);
+        // }
+        // catch (err){
+        //      console.log("Error occured")
+        //     console.log(err);
+        //     console.log(typeof err);
+        //     console.log(err.name);
+        //     console.log(err.message);
+        // }
+
+        // let variable3 = 20;
+        // console.log(variable3);
+
+
+    </script>
+  </body>
+</html>
