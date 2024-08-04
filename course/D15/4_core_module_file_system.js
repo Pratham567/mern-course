@@ -3,42 +3,27 @@
 const fs = require('fs');
 // const { readFile } = require('fs');
 
-const existingFileName = './files/existing_file.txt';
+// const existingFileName = './files/existing_file_1.txt';
 // Read file
-fs.readFile(existingFileName, (err, data) => {
-    console.log("Inside the callback function");
-    if (err) {
-        console.log("error", err);
-        // console.log(err.name);
-        // console.log(err.message);
-    } else {
-        console.log("Data: ")
-        console.log(data);
-        console.log(data.toString());
-    }
-});
-console.log(__dirname);
-console.log("After reading the file");
+// fs.readFile(existingFileName, (err, data) => {
+//     console.log("Inside the callback function");
+//     if (err) {
+//         console.log("error", err);
+//         // console.log(err.name);
+//         // console.log(err.message);
+//     } else {
+//         console.log("Data: ")
+//         console.log(data);
+//         console.log(data.toString());
+//     }
+// });
+// console.log(__dirname);
+// console.log("After reading the file");
+
 
 // Q: Write the above callback function separately?
 // Is the above method asynchronous or synchronous?
 // console.log('Hello');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -55,10 +40,6 @@ console.log("After reading the file");
 //         console.log('File written successfully');
 //     }
 // });
-
-
-
-
 
 
 
