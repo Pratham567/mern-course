@@ -1,3 +1,5 @@
 .DS_Store
 temp/
 a.out.dSYM/
+
+node_modules/
