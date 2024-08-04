@@ -20,25 +20,10 @@ const fs = require('fs');
 // console.log(__dirname);
 // console.log("After reading the file");
 
+
 // Q: Write the above callback function separately?
 // Is the above method asynchronous or synchronous?
 // console.log('Hello');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -46,26 +31,15 @@ const fs = require('fs');
 // Case 1: File already exists
 // Case 2: File does not exist
 
-// const fs = require('fs');
-const content = 'Hello from Node.js again.';
-const fileName = './files/new_file.txt';
-fs.writeFile(fileName, content, (err) => {
-    if (err) {
-        console.log(err);
-    } else {
-        console.log('File written successfully');
-    }
-});
-
-(fs.existsSync(fileName))
-// fs.exists
-
-
-
-
-
-
-
+// const content = 'Hello from Node.js again.';
+// const fileName = './files/new_file.txt';
+// fs.writeFile(fileName, content, (err) => {
+//     if (err) {
+//         console.log(err);
+//     } else {
+//         console.log('File written successfully');
+//     }
+// });
 
 
 
