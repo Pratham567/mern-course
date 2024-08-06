@@ -9,13 +9,13 @@ const fs = require('fs');
 // 3. Listen for requests (port 3000)
 
 
-const server = http.createServer((req, res) => {
+// const server = http.createServer((req, res) => {
     
-});
+// });
 
-server.listen(3000, 'localhost', () => {
-    console.log('Server is listening on port 3000');
-});
+// server.listen(3000, 'localhost', () => {
+//     console.log('Server is listening on port 3000');
+// });
 
 
 
@@ -33,23 +33,23 @@ server.listen(3000, 'localhost', () => {
 
 
 // // Send html content
-// const server = http.createServer( (req, res) => {
-//     res.setHeader('Content-Type', 'text/html');
-//     // read the file
-//     const fileName = './views/index.html';
-//     fs.readFile(fileName, (err, data) => {
-//         if (err) {
-//             console.log(err);
-//             res.end();
-//         } else {
-//             res.end(data);
-//         }
-//     });
-// });
+const server = http.createServer( (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    // read the file
+    const fileName = './views/index.html';
+    fs.readFile(fileName, (err, data) => {
+        if (err) {
+            console.log(err);
+            res.end();
+        } else {
+            res.end(data);
+        }
+    });
+});
 
-// server.listen(3000, 'localhost', () => {
-//     console.log('Server is listening on port 3000');
-// });
+server.listen(3000, 'localhost', () => {
+    console.log('Server is listening on port 3000');
+});
 
 
 // Q: create another file in the views folder, and send that file as response.

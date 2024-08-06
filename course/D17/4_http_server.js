@@ -32,28 +32,28 @@ const http = require('http');
 
 //Q:Send the html file instead of plain text
 
-const fs = require('fs');
+// const fs = require('fs');
 
-const server = http.createServer((req, res) => {
-    console.log(req.url, req.method);
-    const fileName = './views/index.html';
-    fs.readFile(fileName, (err, data) => {
-        if (err) {
-            res.statusCode = 404;
-            console.log(err);
-            res.end('Error reading the file');
-        } else {
-            res.statusCode = 200;
-            res.setHeader('Content-Type', 'text/html');
-            res.end(data);
-        }
-    });
-});
+// const server = http.createServer((req, res) => {
+//     console.log(req.url, req.method);
+//     const fileName = './views/index.html';
+//     fs.readFile(fileName, (err, data) => {
+//         if (err) {
+//             res.statusCode = 404;
+//             console.log(err);
+//             res.end('Error reading the file');
+//         } else {
+//             res.statusCode = 200;
+//             res.setHeader('Content-Type', 'text/html');
+//             res.end(data);
+//         }
+//     });
+// });
 
-// run the server
-server.listen(3010, 'localhost', () => {
-    console.log('Server is listening on port 3010');
-});
+// // run the server
+// server.listen(3010, 'localhost', () => {
+//     console.log('Server is listening on port 3010');
+// });
 
 
 
@@ -102,20 +102,22 @@ server.listen(3010, 'localhost', () => {
 
 
 // // HW: Send JSON content (API)
-// const responseObj = {
-//     name: 'John',
-//     age: 30,
-//     city: 'New York'
-// };
-// const server = http.createServer( (req, res) => {
-//     console.log('Request received');
-//     res.setHeader('Content-Type', 'application/json');
-//     res.end(JSON.stringify(responseObj));
-// });
+const responseObj = {
+    name: 'John',
+    age: 30,
+    city: 'New York'
+};
+console.log(JSON.stringify(responseObj));
 
-// server.listen(3000, 'localhost', () => {
-//     console.log('Server is listening on port 3000');
-// });
+const server = http.createServer( (req, res) => {
+    console.log('Request received');
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(responseObj));
+});
+
+server.listen(3000, 'localhost', () => {
+    console.log('Server is listening on port 3000');
+});
 
 
 
