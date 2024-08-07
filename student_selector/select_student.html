@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Student Selector</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+        background-color: #f0f0f0;
+        color: #333;
+      }
+      #student-name {
+        font-size: 24px;
+        margin-top: 20px;
+        white-space: pre;
+        padding: 10px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        display: none; /* Hide initially */
+      }
+      #select-student-btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+      #select-student-btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Random Student Selector</h1>
+    <button id="select-student-btn">Select Random Student</button>
+    <div>
+      <p id="student-name"></p>
+    </div>
+    <script src="random_student_selector.js"></script>
+  </body>
+</html>
