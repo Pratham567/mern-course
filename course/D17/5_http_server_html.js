@@ -8,14 +8,14 @@ const fs = require('fs');
 // 2. Send an HTML file as response
 // 3. Listen for requests (port 3000)
 
-
-const server = http.createServer((req, res) => {
+// const server = http.createServer((req, res) => {
     
-});
+// });
 
-server.listen(3000, 'localhost', () => {
-    console.log('Server is listening on port 3000');
-});
+// server.listen(3000, 'localhost', () => {
+//     console.log('Server is listening on port 3000');
+// });
+
 
 
 
