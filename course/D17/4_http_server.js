@@ -32,6 +32,7 @@ const http = require('http');
 
 //Q:Send the html file instead of plain text
 
+
 // const fs = require('fs');
 
 // const server = http.createServer((req, res) => {
@@ -54,6 +55,8 @@ const http = require('http');
 // server.listen(3010, 'localhost', () => {
 //     console.log('Server is listening on port 3010');
 // });
+
+
 
 
 
@@ -118,6 +121,7 @@ const server = http.createServer( (req, res) => {
 server.listen(3000, 'localhost', () => {
     console.log('Server is listening on port 3000');
 });
+
 
 
 
