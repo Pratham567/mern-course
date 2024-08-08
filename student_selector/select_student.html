@@ -12,7 +12,7 @@
         background-color: #f0f0f0;
         color: #333;
       }
-      #student-name {
+      #student-names {
         font-size: 24px;
         margin-top: 20px;
         white-space: pre;
@@ -38,10 +38,14 @@
   </head>
   <body>
     <h1>Random Student Selector</h1>
-    <button id="select-student-btn">Select Random Student</button>
-    <div>
-      <p id="student-name"></p>
-    </div>
+    <input
+      type="number"
+      id="student-count"
+      min="1"
+      placeholder="Enter number of students"
+    />
+    <button id="select-student-btn">Select Students</button>
+    <div id="student-names" style="display: none"></div>
     <script src="random_student_selector.js"></script>
   </body>
 </html>
