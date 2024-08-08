@@ -1,48 +1,12 @@
 const studentArr = ['Abbas Akbar', 'Abhinav sharma', 'Abhishek Bansal ', 'Abhishek Srivastava', 'Aditya Kumar Singh ', 'Ali Sher Khan', 'Ananya Lamba', 'Anjali Debnath', 'Ankit Saini', 'Anoushka gautam', 'Ansh Kumar Gupta', 'Anshika Bhatnagar ', 'Anuj Chauhan ', 'Anurag Saini', 'Arin Saxena', 'Ashish Ansh', 'Avni saxena', 'Divyanshi Vishnoi ', 'Inayat Ullah Khan', 'Kratika Agarwal', 'Manish Kumar', 'Manit rastogi ', 'Nikita Rathore', 'Prakhar Sharma ', 'Prakriti Gupta', 'Pranjal Agarwal', 'Prince Saxena ', 'Sakshi Chauhan', 'Samarth Rastogi', 'Samra Rubab ', 'Sandeep Kumar', 'Sarthak rastogi', 'Shashank johri', 'Shashwat Tewari', 'Shivam Prajapati', 'Shivi Agarwal', 'Shrey Singhal', 'Sohil Ansari', 'Tahir Ali', 'Tahzeeb Malik ', 'Tanu Saini', 'Vishal kumar', 'Pratham Gupta'];
 
-const exclusionList = ['Pratham Gupta', 'Sohil Ansari', 'Anurag Saini'];
+const exclusionList = ['Pratham Gupta', 'Sohil Ansari', 'Anurag Saini', 'Prakriti Gupta'];
 
-const priorityList = ['Prakriti Gupta'];
+const priorityList = [];
 
+const typingSpeed = 100;
 
-// function getRandomStudent(arr, exclusionList) {
-//     const availableStudents = arr.filter(student => !exclusionList.includes(student));
-//     if (availableStudents.length === 0) {
-//         return "No students available for selection.";
-//     }
-//     const randomIndex = Math.floor(Math.random() * availableStudents.length);
-//     return availableStudents[randomIndex];
-// }
-
-// function printCharacterByCharacter(text, index = 0) {
-//     if (index < text.length) {
-//         process.stdout.write(text[index]);
-//         setTimeout(() => printCharacterByCharacter(text, index + 1), 500);
-//     } else {
-//         console.log(); // Move to the next line after printing all characters
-//     }
-// }
-
-// function displayRandomStudent(arr, exclusionList) {
-//     console.log("Selecting a random student...");
-
-//     setTimeout(() => {
-//         console.log("3...");
-//         setTimeout(() => {
-//             console.log("2...");
-//             setTimeout(() => {
-//                 console.log("1...");
-//                 setTimeout(() => {
-//                     const randomStudent = getRandomStudent(arr, exclusionList);
-//                     console.log("Randomly selected student: ");
-//                     printCharacterByCharacter(randomStudent);
-//                 }, 1000);
-//             }, 1000);
-//         }, 1000);
-//     }, 1000);
-// }
-
-function getRandomStudentWithPriorityWeightage(arr, exclusionList, priorityList) {
+function getRandomStudentsWithPriorityWeightage(arr, exclusionList, priorityList, count) {
     if (!Array.isArray(priorityList)) {
         throw new TypeError("priorityList must be an array");
     }
@@ -57,50 +21,58 @@ function getRandomStudentWithPriorityWeightage(arr, exclusionList, priorityList)
 
     // Filter out the exclusion list
     const availableStudents = extendedArr.filter(student => !exclusionList.includes(student));
-    if (availableStudents.length === 0) {
-        return "No students available for selection.";
+    if (availableStudents.length < count) {
+        return "Not enough students available for selection.";
     }
 
-    // Select a random student
-    const randomIndex = Math.floor(Math.random() * availableStudents.length);
-    return availableStudents[randomIndex];
+    // Select random students
+    const selectedStudents = [];
+    while (selectedStudents.length < count) {
+        const randomIndex = Math.floor(Math.random() * availableStudents.length);
+        const student = availableStudents[randomIndex];
+        if (!selectedStudents.includes(student)) {
+            selectedStudents.push(student);
+        }
+    }
+
+    return selectedStudents;
 }
 
 function printCharacterByCharacterInElement(element, text, index, callback) {
     if (index < text.length) {
         element.innerText += text[index];
-        setTimeout(() => printCharacterByCharacterInElement(element, text, index + 1, callback), 200);
+        setTimeout(() => printCharacterByCharacterInElement(element, text, index + 1, callback), typingSpeed);
     } else if (callback) {
         callback();
     }
 }
 
-document
-    .getElementById("select-student-btn")
-    .addEventListener("click", () => {
+document.getElementById('select-student-btn').addEventListener('click', function() {
+    const button = this;
+    button.disabled = true; // Disable the button
 
-            const studentName = getRandomStudentWithPriorityWeightage(studentArr, exclusionList, priorityList);
-            console.log(`Selected student: '${studentName}'`); // Debugging line
-            const studentNameElement = document.getElementById("student-name");
-            const selectStudentBtn = document.getElementById("select-student-btn");
-            studentNameElement.style.display = 'inline-block'; // Make visible
-            studentNameElement.innerText = ''; // Clear previous text
-            selectStudentBtn.disabled = true; // Disable the button
-            printCharacterByCharacterInElement(studentNameElement, studentName, 0, () => {
-                selectStudentBtn.disabled = false; // Re-enable the button after printing
-            });
+    const studentCountInput = document.getElementById('student-count');
+    const studentCount = parseInt(studentCountInput.value, 10);
 
-    });
+    if (isNaN(studentCount) || studentCount <= 0) {
+        alert('Please enter a valid number of students.');
+        button.disabled = false;
+        return;
+    }
 
-
-
-
-// Solution numbe 2:
-// getRandomStudent from normal array -> probability equal for all
-// getRandomStudent from normal array -> probability double for each student
-
-// check in priorityList -> student1 -> return student1
-// else
-// check in priorityList -> student2 -> return student2
-// else return student1
+    const selectedStudents = getRandomStudentsWithPriorityWeightage(studentArr, exclusionList, priorityList, studentCount);
+    const studentNamesElement = document.getElementById('student-names');
+    if (Array.isArray(selectedStudents)) {
+        studentNamesElement.innerText = ''; // Clear previous text
+        // Append the Selected students in a new string separated by new line
+        const studentsNames = selectedStudents.join('\n');
+        printCharacterByCharacterInElement(studentNamesElement, studentsNames, 0, () => {
+            button.disabled = false; // Enable the button after printing
+        });
+    } else {
+        studentNamesElement.innerText = selectedStudents; // Display error message
+        button.disabled = false; // Enable the button if there's an error
+    }
+    studentNamesElement.style.display = 'block';
+});
 
