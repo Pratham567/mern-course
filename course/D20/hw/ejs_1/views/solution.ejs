@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Combined EJS Templates</title>
+</head>
+<body>
+    <!-- Basic Looping -->
+    <section id="basic-looping">
+        <h2>Numbers from 1 to 20</h2>
+        <ul>
+            <% for(let i = 1; i <= 20; i++) { %>
+                <li><%= i %></li>
+            <% } %>
+        </ul>
+    </section>
+
+    <!-- Conditional Rendering -->
+    <section id="conditional-rendering">
+        <h2>Greeting</h2>
+        <% 
+            let greeting;
+            if (currentHour < 12) {
+                greeting = "Good Morning";
+            } else if (currentHour < 18) {
+                greeting = "Good Afternoon";
+            } else {
+                greeting = "Good Evening";
+            }
+        %>
+        <p><%= greeting %></p>
+    </section>
+
+    <!-- Rendering a List -->
+    <section id="rendering-list">
+        <h2>Fruits</h2>
+        <ul>
+            <% fruits.forEach(fruit => { %>
+                <li><%= fruit %></li>
+            <% }); %>
+        </ul>
+    </section>
+
+    <!-- Displaying User Information -->
+    <section id="user-info">
+        <h2>User Information</h2>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            <% users.forEach(user => { %>
+                <tr>
+                    <td><%= user.name %></td>
+                    <td><%= user.age %></td>
+                </tr>
+            <% }); %>
+        </table>
+    </section>
+
+    <!-- Form Handling -->
+    <section id="form">
+        <h2>Form</h2>
+        <form action="/form" method="GET">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br>
+            <button type="submit">Submit</button>
+        </form>
+        <% if (submittedName) { %>
+            <p>Thank you, <%= submittedName %>!</p>
+        <% } %>
+    </section>
+
+    <!-- Escaping vs. Unescaped Output -->
+    <section id="escaping">
+        <h2>Escaping vs. Unescaped Output</h2>
+        <p>Escaped: <%= htmlString %></p>
+        <p>Unescaped: <%- htmlString %></p>
+    </section>
+
+    <!-- Dynamic Content -->
+    <section id="dynamic-content">
+        <h2>Dynamic Content</h2>
+        <% if (isLoggedIn) { %>
+            <p>Welcome, <%= userName %>!</p>
+        <% } else { %>
+            <button>Login</button>
+        <% } %>
+    </section>
+
+    <!-- Loop with Conditionals -->
+    <section id="fizzbuzz">
+        <h2>FizzBuzz</h2>
+        <ul>
+            <% for(let i = 1; i <= 15; i++) { %>
+                <li>
+                    <% if (i % 3 === 0 && i % 5 === 0) { %>
+                        FizzBuzz
+                    <% } else if (i % 3 === 0) { %>
+                        Fizz
+                    <% } else if (i % 5 === 0) { %>
+                        Buzz
+                    <% } else { %>
+                        <%= i %>
+                    <% } %>
+                </li>
+            <% } %>
+        </ul>
+    </section>
+
+    <!-- Nested Loops -->
+    <section id="multiplication-table">
+        <h2>Multiplication Table</h2>
+        <table border="1">
+            <% for(let i = 1; i <= 10; i++) { %>
+                <tr>
+                    <% for(let j = 1; j <= 10; j++) { %>
+                        <td><%= i * j %></td>
+                    <% } %>
+                </tr>
+            <% } %>
+        </table>
+    </section>
+</body>
+</html>
