@@ -84,7 +84,6 @@ function printResultAndAppendinputCommandStrip(node, printWaitTime, cmd = '') {
 function getTypeableNodeContent(nodeId) {
     const p = document.getElementById(nodeId);
     const node = p.childNodes[p.childNodes.length - 1];
-    // replace multiple spaces with a single space
     node._saved = cleanupData(node.textContent);
     node.textContent = '';
     return node;
