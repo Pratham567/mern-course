@@ -27,7 +27,7 @@ function getLastTextChildNode(parentNode) {
 
 /**
  * Set the app version in the terminal header
- * @param {string} app_version_string
+ * @param {String} app_version_string
  * @returns {void}
  * @description Set the app version in the terminal header
 */
@@ -39,7 +39,7 @@ function setAppVersion(app_version_string) {
 
 /**
  * Get the node content which can be typed
- * @param {string} nodeId
+ * @param {String} nodeId
  * @returns {HTMLElement} node content
  */
 function printResultCharByChar(node, charPrintWaitTime = 140, cmd) {
@@ -78,7 +78,7 @@ function printResultAndAppendinputCommandStrip(node, printWaitTime, cmd = '') {
 
 /**
  * Fetches the iteratable content from the given NodeId
- * @params takes in the nodeID
+ * @param {String} nodeId
  * @returns returns a list of a node which is to be iterated.
  */
 function getTypeableNodeContent(nodeId) {
@@ -91,8 +91,8 @@ function getTypeableNodeContent(nodeId) {
 
 /**
  * Cleans up the data by removing leading and trailing spaces
- * @param {string} data
- * @returns {string} cleaned up data
+ * @param {String} data
+ * @returns {String} cleaned up data
  */
 function cleanupData(data) {
     return data.trim();
@@ -110,7 +110,6 @@ function appendInputStrip(node, delay, cmd) {
         else {
             inputBlock.value = 'help';
         }
-        // highlightCodeInputField();
     }, delay);
 }
 
@@ -123,14 +122,12 @@ cursor.className = 'cursor blink';
 let inputCommandStrip = document.getElementById('inputCommandStrip')
 let inputBlock = document.getElementById(codeInputField);
 
+const getStartedNode = getTypeableNodeContent(GET_STARTED_NODE_ID);
 
 
-
-// // Main Call starts here:
+// // Main Call starts here (Runtime)
 setBackgroundColor();
 setAppVersion(APP_VERSION_STRING);
-
-const getStartedNode = getTypeableNodeContent(GET_STARTED_NODE_ID);
 setTimeout(function () {
     printResultAndAppendinputCommandStrip(getStartedNode, 50);
 }, 2000);
@@ -160,7 +157,6 @@ setTimeout(function () {
 //     event.preventDefault();
 //     if (event.keyCode === 13) {
 //         executeCommand(inputBlock.value);
-//         // document.getElementById("id_of_button").click();
 //     }
 // });
 
