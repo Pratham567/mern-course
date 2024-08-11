@@ -52,8 +52,6 @@ app.get('/students/:id', (req, res) => {
 });
 
 
-
-
 // 1. Create a function that saves the new student
 
 // 2. Create a POST API which reads the body and console.log it
@@ -69,7 +67,7 @@ app.get('/students/:id', (req, res) => {
 // Q: What happens if we add same student again?
 // Q: How can we prevent adding the same student again?
 
-// 4. Create a POST API which reads the body and saves the new student only if it does not exist
+// HW: Create a POST API which reads the body and saves the new student only if it does not exist
 
 
 

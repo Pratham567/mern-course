@@ -30,7 +30,6 @@ app.get('/students', (req, res) => {
     res.render('students', { title: 'Students', students });
 });
 
-
 // GET /students/1 -> { id: 1, name: 'John', age: 20 }
 function getStudentById(id) {
     return students.find(s => s.id === id);

@@ -69,7 +69,7 @@ function printResultCharByChar(node, charPrintWaitTime = 140, cmd) {
 
     }, charPrintWaitTime);
 
-    // console.log("Debug: ending printResultCharByChar");
+    console.log("Debug: ending printResultCharByChar");
 }
 
 function printResultAndAppendinputCommandStrip(node, printWaitTime, cmd = '') {
@@ -98,6 +98,12 @@ function cleanupData(data) {
     return data.trim();
 }
 
+/**
+ * Appends the input strip to the terminal
+ * @param {HTMLElement} node
+ * @param {Number} delay
+ * @param {String} cmd
+ */
 function appendInputStrip(node, delay, cmd) {
     setTimeout(() => {
         cursor.className = 'cursor blink';
@@ -110,8 +116,41 @@ function appendInputStrip(node, delay, cmd) {
         else {
             inputBlock.value = 'help';
         }
+        highlightCodeInputField();
     }, delay);
 }
+
+
+/**
+ * Highlights the inputCommandStrip area and moves the focus of the pointer to it.
+ */
+function highlightCodeInputField() {
+    document.getElementById(CODE_INPUT_FIELD_ID).focus();
+    document.getElementById(CODE_INPUT_FIELD_ID).select();
+}
+
+
+/**
+ * Function to interpret the inputCommand and take action
+ * @param {string} cmd 
+ * @returns void
+ */
+function executeCommand(cmd = 'help') {
+
+    cmd = cmd.toLowerCase();
+    console.log("Debug: Received command for execution: ", cmd);
+
+    // TODO: Complete this function
+    // hide initialSection
+    // display newSection
+    // clear all child nodes of newSection, it will be taken care later;
+    // Given the command, get the result text
+    // Update the executed command para
+    // Display the result text of the executed command
+    // Take the related action based on the command, if needed (Eg: open a new tab, etc)
+}
+
+
 
 // // Initial Setup (Initialization)
 // Setup cursor
@@ -120,8 +159,17 @@ cursor.innerHTML = '_';
 cursor.className = 'cursor blink';
 
 let inputCommandStrip = document.getElementById('inputCommandStrip')
-let inputBlock = document.getElementById(codeInputField);
+let inputBlock = document.getElementById(CODE_INPUT_FIELD_ID);
 const getStartedNode = getTypeableNodeContent(GET_STARTED_NODE_ID);
+
+// Add an event listener to the input block
+inputBlock.addEventListener("keyup", function (event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        console.log("Debug: inputBlock.value: ", inputBlock.value);
+        executeCommand(inputBlock.value);
+    }
+});
 
 
 // // Main Call starts here (Runtime)
@@ -131,40 +179,3 @@ setTimeout(function () {
     printResultAndAppendinputCommandStrip(getStartedNode, 50);
 }, 2000);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// input Command Strip, set the keyup event for ENTER key
-// inputBlock.addEventListener("keyup", function (event) {
-//     event.preventDefault();
-//     if (event.keyCode === 13) {
-//         executeCommand(inputBlock.value);
-//         // document.getElementById("id_of_button").click();
-//     }
-// });
-
-
-// /**
-//  * Highlights the inputCommandStrip area and moves the focus of the pointer to it.
-//  */
-// function highlightCodeInputField() {
-//     document.getElementById(CODE_INPUT_FIELD_ID).focus();
-//     document.getElementById(CODE_INPUT_FIELD_ID).select();
-// }

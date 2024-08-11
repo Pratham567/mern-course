@@ -167,10 +167,19 @@ input {
   margin-bottom: 0;
 }
 
+#inputCommandStrip {
+  display: flex;
+  align-items: center;
+}
+
+#inputCommandStrip span {
+  margin-right: 5px; /* Adjust as needed */
+}
+
 #codeInputField {
-  display: inline-block;
-  width: 60%;
-  padding-right: 10px;
+  flex-grow: 1;
+  padding-right: 0%;
+  margin-right: 0%;
   box-sizing: border-box;
 }
 
