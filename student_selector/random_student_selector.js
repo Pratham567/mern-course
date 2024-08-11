@@ -1,6 +1,6 @@
 const studentArr = ['Abbas Akbar', 'Abhinav sharma', 'Abhishek Bansal ', 'Abhishek Srivastava', 'Aditya Kumar Singh ', 'Ali Sher Khan', 'Ananya Lamba', 'Anjali Debnath', 'Ankit Saini', 'Anoushka gautam', 'Ansh Kumar Gupta', 'Anshika Bhatnagar ', 'Anuj Chauhan ', 'Anurag Saini', 'Arin Saxena', 'Ashish Ansh', 'Avni saxena', 'Divyanshi Vishnoi ', 'Inayat Ullah Khan', 'Kratika Agarwal', 'Manish Kumar', 'Manit rastogi ', 'Nikita Rathore', 'Prakhar Sharma ', 'Prakriti Gupta', 'Pranjal Agarwal', 'Prince Saxena ', 'Sakshi Chauhan', 'Samarth Rastogi', 'Samra Rubab ', 'Sandeep Kumar', 'Sarthak rastogi', 'Shashank johri', 'Shashwat Tewari', 'Shivam Prajapati', 'Shivi Agarwal', 'Shrey Singhal', 'Sohil Ansari', 'Tahir Ali', 'Tahzeeb Malik ', 'Tanu Saini', 'Vishal kumar', 'Pratham Gupta'];
 
-const exclusionList = ['Pratham Gupta', 'Sohil Ansari', 'Anurag Saini', 'Prakriti Gupta'];
+const exclusionList = ['Pratham Gupta', 'Sohil Ansari', 'Anurag Saini', 'Prakriti Gupta', 'Shrey Singhal', 'Divyanshi Vishnoi', 'Vishal kumar', 'Anjali Debnath'];
 
 const priorityList = [];
 
