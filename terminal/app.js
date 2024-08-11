@@ -121,7 +121,6 @@ cursor.className = 'cursor blink';
 
 let inputCommandStrip = document.getElementById('inputCommandStrip')
 let inputBlock = document.getElementById(codeInputField);
-
 const getStartedNode = getTypeableNodeContent(GET_STARTED_NODE_ID);
 
 
@@ -157,6 +156,7 @@ setTimeout(function () {
 //     event.preventDefault();
 //     if (event.keyCode === 13) {
 //         executeCommand(inputBlock.value);
+//         // document.getElementById("id_of_button").click();
 //     }
 // });
 

@@ -3,3 +3,5 @@ temp/
 a.out.dSYM/
 
 node_modules/
+
+file_ignore.txt
