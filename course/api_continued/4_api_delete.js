@@ -70,17 +70,36 @@ app.post('/students', (req, res) => {
 
 
 // 1. Create a function that deletes the student with the given id
+function deleteStudentById(id) {
+    const index = students.findIndex(s => s.id === id);
+    if (index === -1) {
+        return;
+    }
+    students.splice(index, 1);
+}
 
 // 2. Create a function that deletes the student with the given name
 
+// app.use('/students/id_1/:id', (req, res) => {
+app.use('/students/id/:id', (req, res) => {
+    res.status(404).render('error', { title: 'Error' });
+});
+
 // 3. Create a DELETE API which reads the path parameter and console.log it
+app.delete('/students/id_2/:id', (req, res) => { 
+    console.log("This is the delete handler");
+    const idOfStudent = req.params.id;
+    const intId = parseInt(idOfStudent);
+    console.log("intId", intId);
+    deleteStudentById(intId);
+    res.send(`The student with id ${intId} was deleted if it existed`);
+} );
 
 // 4. Create a DELETE API which reads the path parameter and deletes the student with the given id
 
 // 5. Create a DELETE API which reads the path parameter and deletes the student with the given name
 
 // HW: Add a validation on delete if the student does not exist
-
 
 
 

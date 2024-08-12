@@ -52,12 +52,50 @@ app.get('/students/:id', (req, res) => {
 });
 
 
+/*
+const server = http.createServer( (req, res) => {
+    console.log('Request received');
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(responseObj));
+});
+*/
+
+
+
+
+
+
+
+// { id: 1, name: 'John', age: 20 }
 // 1. Create a function that saves the new student
+function addStudent(student) {
+    students.push(student);
+}
+
+
 
 // 2. Create a POST API which reads the body and console.log it
+let middlewareFunc1 = express.json();
+// app.use(middlewareFunc1);
+app.post('/students', (req, res) => {
+    const obj = req.body;
+    console.log(obj);
+    addStudent(obj);
+    res.send("The data has been saved");
+} );
+
+
+
 // any new middleware to parse the body?
 
 // 3. Create a POST API which reads the body and saves the new student
+
+
+
+
+
+
+
 
 
 
@@ -67,7 +105,9 @@ app.get('/students/:id', (req, res) => {
 // Q: What happens if we add same student again?
 // Q: How can we prevent adding the same student again?
 
-// HW: Create a POST API which reads the body and saves the new student only if it does not exist
+
+// HW: Create a POST API which reads the body and 
+// saves the new student only if it does not exist by name
 
 
 
