@@ -51,7 +51,6 @@ app.get('/students/:id', (req, res) => {
     res.send(student);
 });
 
-
 /*
 const server = http.createServer( (req, res) => {
     console.log('Request received');
@@ -84,20 +83,9 @@ app.post('/students', (req, res) => {
     res.send("The data has been saved");
 } );
 
-
-
 // any new middleware to parse the body?
 
 // 3. Create a POST API which reads the body and saves the new student
-
-
-
-
-
-
-
-
-
 
 // Q: Why is it important to use express.json() middleware?
 // Q: What is the status code of the response?
@@ -108,44 +96,6 @@ app.post('/students', (req, res) => {
 
 // HW: Create a POST API which reads the body and 
 // saves the new student only if it does not exist by name
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

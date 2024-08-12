@@ -119,16 +119,6 @@ app.delete('/students/id_2/:id', (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
 // // 1. Create a function that deletes the student with the given id
 // function deleteStudentById(id) {
 //     const index = students.findIndex(s => s.id === id);
