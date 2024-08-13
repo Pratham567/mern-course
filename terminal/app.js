@@ -2,6 +2,8 @@
 const APP_VERSION_STRING = "1.1.18";
 const CODE_INPUT_FIELD_ID = 'codeInputField';
 const GET_STARTED_NODE_ID = 'getStartedNodeId';
+const INPUT_COMMAND_STRIP_ID = 'inputCommandStrip';
+const INITIAL_SECTION_ID = 'initialSection';
 
 
 // FUNCTIONS
@@ -140,16 +142,52 @@ function executeCommand(cmd = 'help') {
     cmd = cmd.toLowerCase();
     console.log("Debug: Received command for execution: ", cmd);
 
-    // TODO: Complete this function
-    // hide initialSection
-    // display newSection
+    // hide old section
+    initialSection.style.display = 'none';
+    //display newSection
+    newSection.style.display = 'block';
+    newSection.textContent = cmd;
     // clear all child nodes of newSection, it will be taken care later;
+    clearAllChildNodes(newSection);
+
     // Given the command, get the result text
+    let resultText = getResultText(cmd);
+
+    newSection.textContent = `Command: ${cmd} \nResult: ${resultText}`;
+
+    // TODO: Complete this function
     // Update the executed command para
     // Display the result text of the executed command
     // Take the related action based on the command, if needed (Eg: open a new tab, etc)
 }
 
+function getResultText(cmd) {
+    // Add a switch case to return the result text based on the command
+    switch (cmd) {
+        case 'hi':
+            return "Hi! How are you doing";
+        case 'help':
+            return "Help executed";
+        case 'random':
+            return "Random executed";
+        default:
+            return "Invalid command";
+    }
+
+}
+
+/**
+ * A function that clears all the child nodes of a node.
+ * @param {*} inputNode 
+ * @return void
+ */
+function clearAllChildNodes(inputNode) {
+    var child = inputNode.lastElementChild;
+    while (child) {
+        inputNode.removeChild(child);
+        child = inputNode.lastElementChild;
+    }
+}
 
 
 // // Initial Setup (Initialization)
@@ -158,9 +196,19 @@ const cursor = document.createElement('span');
 cursor.innerHTML = '_';
 cursor.className = 'cursor blink';
 
-let inputCommandStrip = document.getElementById('inputCommandStrip')
+let inputCommandStrip = document.getElementById(INPUT_COMMAND_STRIP_ID)
 let inputBlock = document.getElementById(CODE_INPUT_FIELD_ID);
 const getStartedNode = getTypeableNodeContent(GET_STARTED_NODE_ID);
+
+// Definition of a newSection, to be used repeatedly
+let newSection = document.createElement('section');
+newSection.id = 'newSection'
+newSection.className = 'container';
+newSection.display = 'none';
+
+// Get reference to the initial section
+let initialSection = document.getElementById(INITIAL_SECTION_ID);
+initialSection.parentNode.appendChild(newSection);
 
 // Add an event listener to the input block
 inputBlock.addEventListener("keyup", function (event) {
