@@ -1,16 +1,20 @@
 console.log('Start');
-
+setTimeout(() => {
+    console.log('setTimeout');
+}, 0);
 Promise.resolve()
     .then(() => {
         console.log('Promise');
     });
-
-setTimeout(() => {
-    console.log('setTimeout');
-}, 0);
-
-// console.log('End');
-
+console.log('End');
+function f1(){
+    console.log('f1');
+}
+function f2(callback){
+    console.log('f2');
+    callback();
+}
+f2(() => {console.log('f3')});
 
 
 
