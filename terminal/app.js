@@ -25,7 +25,7 @@ const GITHUB_CMDS = ['github', 'git', 'gitlab', 'vcs'];
 const RANDOM_CMDS = ['random'];
 const BLOCKED_CMDS = ['sudo', 'root', 'su', 'admin', 'superuser', 'shutdown', 'reboot', 'restart',
     'patch', 'update', 'daemon', 'systemctl', 'edit', 'modify'];
-const dateCmds = ['date', 'time'];
+const DATE_CMDS = ['date', 'time', 'timestamp'];
 
 // Prefixes
 const FAILED_RESULT_PREFIX_ACTION_WORDS_LIST = ['Oops', 'Ahh', 'Oh no', "I'm sorry",
@@ -476,7 +476,7 @@ function getResultText(cmd) {
         case RANDOM_CMDS.includes(cmd):
             resultText += "Here's a fact about Pratham. " + getRandomElement(RANDOM_RESULT_LIST);
             break;
-        case dateCmds.includes(cmd):
+        case DATE_CMDS.includes(cmd):
             resultText += "The current Date-Time Stamp is: " + getPrettyDateTime();
             break;
         case BLOCKED_CMDS.includes(cmd):
