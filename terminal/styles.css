@@ -163,6 +163,10 @@ input {
   color: hsl(359, 100%, 67%);
 }
 
+.justified-text {
+  text-align: justify;
+}
+
 .container > *:last-child {
   margin-bottom: 0;
 }

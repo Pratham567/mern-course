@@ -4,7 +4,23 @@ const CODE_INPUT_FIELD_ID = 'codeInputField';
 const GET_STARTED_NODE_ID = 'getStartedNodeId';
 const INPUT_COMMAND_STRIP_ID = 'inputCommandStrip';
 const INITIAL_SECTION_ID = 'initialSection';
+const LAST_UPDATED = "August 17th, 2024 02:55";
+const RESUME_URL = "https://bit.ly/ResumePratham";
+const LINKEDIN_URL = "https://linkedin.com/in/pratham567";
+const GITHUB_URL = "https://github.com/Pratham567";
 
+// club commands based on results
+const specialCmds = ['sama', 'projects'];
+const debugCmds = ['h'];
+const RESUME_CMDS = ['resume', 'biodata', 'cv'];
+const bioCmds = ['bio', 'about', 'biography', 'info', 'intro'];
+const contactCmds = ['contact', 'email'];
+const LINKEDIN_CMDS = ['linkedin'];
+const GITHUB_CMDS = ['github', 'git', 'gitlab', 'vcs'];
+const randomCmds = ['random'];
+const blockedCmds = ['sudo', 'root', 'su', 'admin', 'superuser', 'shutdown', 'reboot', 'restart', 
+                     'patch', 'update', 'daemon', 'systemctl', 'edit', 'modify'];
+const dateCmds = ['date', 'time'];
 
 // FUNCTIONS
 /**
@@ -146,19 +162,73 @@ function executeCommand(cmd = 'help') {
     initialSection.style.display = 'none';
     //display newSection
     newSection.style.display = 'block';
-    newSection.textContent = cmd;
     // clear all child nodes of newSection, it will be taken care later;
     clearAllChildNodes(newSection);
 
     // Given the command, get the result text
     let resultText = getResultText(cmd);
 
-    newSection.textContent = `Command: ${cmd} \nResult: ${resultText}`;
-
-    // TODO: Complete this function
     // Update the executed command para
+    updateExecutedCommandPara(cmd);
     // Display the result text of the executed command
+    displayResultOfCommand(resultText, cmd);
     // Take the related action based on the command, if needed (Eg: open a new tab, etc)
+    takeCmdRelatedAction(cmd);
+}
+
+function updateExecutedCommandPara(cmd) {
+    let rcmd = "Executed Command: " + cmd;;
+    let lastEl = getLastTextChildNode(executedCommandPara);
+    lastEl.textContent = rcmd;
+}
+
+/**
+ * clear newSection and append resultPara and inputCommandStrip
+ * @param {string} result 
+ */
+function displayResultOfCommand(resultText, cmd) {
+    // Clear inputCommandStrip from resultPara
+    if (resultPara.contains(inputCommandStrip)) {
+        resultPara.removeChild(inputCommandStrip);
+    }
+
+    newSection.appendChild(executedCommandPara);
+    newSection.appendChild(resultPara);
+
+
+    // display executedCommandPara and resultPara
+    executedCommandPara.style.display = 'block';
+    resultPara.style.display = 'block';
+
+    let lastElemenrOfResultPara = getLastTextChildNode(resultPara);
+    lastElemenrOfResultPara._saved = resultText.replace(/ {2,}/g, ' ').trim();
+    lastElemenrOfResultPara.textContent = '';
+    // print result & highlight. Also, append/focus the inputCommandStrip
+    printResultAndAppendinputCommandStrip(lastElemenrOfResultPara, 25, cmd);
+}
+
+/**
+ * This function performs any special action required for the given command.
+ * This is executed as the command result is being displayed to the user.
+ * @param {String} cmd 
+ */
+function takeCmdRelatedAction(cmd) {
+
+    if (RESUME_CMDS.includes(cmd)) {
+        setTimeout(function () {
+            window.open(RESUME_URL, "_blank");
+        }, 4000);
+    }
+    else if (LINKEDIN_CMDS.includes(cmd)) {
+        setTimeout(function () {
+            window.open(LINKEDIN_URL, "_blank");
+        }, 4000);
+    }
+    else if (GITHUB_CMDS.includes(cmd)) {
+        setTimeout(function () {
+            window.open(GITHUB_URL, "_blank");
+        }, 4000);
+    }
 }
 
 function getResultText(cmd) {
@@ -176,6 +246,20 @@ function getResultText(cmd) {
 
 }
 
+function getResultText(cmd) {
+    // Add a switch case to return the result text based on the command
+    switch (cmd) {
+        case 'hi':
+            return "Hi! How are you doing";
+        case 'help':
+            return "Help executed";
+        case 'random':
+            return "Random executed";
+        default:
+            return "Invalid command";
+    }
+
+}
 /**
  * A function that clears all the child nodes of a node.
  * @param {*} inputNode 
@@ -209,6 +293,10 @@ newSection.display = 'none';
 // Get reference to the initial section
 let initialSection = document.getElementById(INITIAL_SECTION_ID);
 initialSection.parentNode.appendChild(newSection);
+
+// Get result Para and executedCommandPara
+let resultPara = document.getElementById('resultParaId');
+let executedCommandPara = document.getElementById('executedCommandPara');
 
 // Add an event listener to the input block
 inputBlock.addEventListener("keyup", function (event) {
