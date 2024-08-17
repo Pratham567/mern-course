@@ -246,6 +246,20 @@ function getResultText(cmd) {
 
 }
 
+function getResultText(cmd) {
+    // Add a switch case to return the result text based on the command
+    switch (cmd) {
+        case 'hi':
+            return "Hi! How are you doing";
+        case 'help':
+            return "Help executed";
+        case 'random':
+            return "Random executed";
+        default:
+            return "Invalid command";
+    }
+
+}
 /**
  * A function that clears all the child nodes of a node.
  * @param {*} inputNode 
